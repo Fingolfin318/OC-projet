@@ -1,0 +1,20 @@
+h1 {
+    color: blue;
+    font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p {
+    color: crimson;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a { padding: 10px 20px;
+    text-align:left;
+    border-style: dashed;
+    border-width: 2px; 
+    color: red;
+}
+/*a:normal {background-color: yellow;} 
+a:visited {background-color:black; }*/
+a:hover {background-color: red;}
+a:active {background-color: green;}
