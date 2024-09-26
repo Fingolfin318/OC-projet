@@ -1,18 +1,23 @@
 h1 {
-    color: blue;
+    color: rgb(66, 66, 173);
     font-size: 100px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+h2 {
+    color: rgb(126, 0, 48);
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 p {
-    color: crimson;
-    font-size: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 a { padding: 10px 20px;
     text-align:left;
     border-style: dashed;
     border-width: 2px; 
-    color: red;
+    color: rgb(0, 0, 0);
 }
 /*a:normal {background-color: yellow;} 
 a:visited {background-color:black; }*/
