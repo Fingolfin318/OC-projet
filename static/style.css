@@ -1,4 +1,7 @@
 h1 {
+    bottom: auto ;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 6px 4px;
     color: rgb(66, 66, 173);
     font-size: 100px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
