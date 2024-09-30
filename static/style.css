@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+    font-size: 100px;
+}
+p {
+    color: crimson;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a { padding: 10px 20px;
+    text-align:left;
+    border-style: dashed;
+    border-width: 2px; 
+    color: red;
+}
+a:normal {background-color: violet;} 
+a:hover {background-color: red;}
+a:active {background-color: green;}
+body { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: lightskyblue; 
+}
