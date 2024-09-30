@@ -1,7 +1,6 @@
 h1 {
     color: blue;
     font-size: 100px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 p {
     color: crimson;
@@ -14,7 +13,10 @@ a { padding: 10px 20px;
     border-width: 2px; 
     color: red;
 }
-/*a:normal {background-color: yellow;} 
-a:visited {background-color:black; }*/
+a:normal {background-color: violet;} 
 a:hover {background-color: red;}
 a:active {background-color: green;}
+body { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: lightskyblue; 
+}
