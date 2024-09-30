@@ -1,8 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head><meta charset="utf-8">
-        <meta name="author" content="Guillaume Kauf"
+        <meta name="author" content="Guillaume Kauf">
+        <link rel="stylesheet" href="style_files/style.css"> 
         <title>CV</title>
      </head>
  <body>
-     <section>
+    <section>
+      <h1>Voici ton CV :</h1>
+        <form action="/signin" 
+              method="post"
+              target="_self">
+            <p>
+              <label>
+              <input type="radio" name="title" value="mr">
+                Mr
+              </label>
+              <label>
+              <input type="radio" name="title" value="mme">
+                Mme
+              </label>
+            </p>
+            <p>
+              <label>Nom</label><br>
+              <input type="text" name="nom" required>
+            </p>
+            <p>
+              <label>Prénom</label><br>
+              <input type="text" name="prénom" required>
+            </p>
+            <p>
+              <label>Email</label><br>
+              <input type="email" name="email" required>
+            </p>
+            <p>
+              <label>Numéro de téléphone</label><br>
+              <input type="tel" name="numéro_de_téléphone" required>
+            </p>
+            <p>
+              <label>Adresse</label><br>
+              <input type="text" name="adresse" required>
+            </p>
+            <p>
+              <label>Langues et niveaux</label><br>
+              <input type="text" name="langues_et_niveaux">
+            </p>
+            <p>
+              <label>Compétences</label><br>
+              <input type="text" name="compétences" required>
+            </p>
+            <p>
+                <label>Domaines</label><br>
+                  <select>
+                    <option>Santé</option>
+                    <option>Bâtiment, travaux publics, aménagement et transports</option>
+                    <option>Arts, culture, lettres et communication </option>
+                    <option>Enseignement et sciences de l'éducation, sciences humaines et sociales</option>
+                    <option>Justice et protection du public</option>
+                    <option>Administration, affaires, comptabilité et finance</option>
+                    <option>Ressources naturelles, agriculture, faune et environnement</option>
+                    <option>Tourisme et hôtellerie</option>
+                    <option>Informatique</option>
+                  </select>
+            </p>
+            <p>
+              <label>Formations et anciens métiers</label><br>
+              <input type="text" name="formations_et_anciens_métiers" required>
+            </p>   
+            <p>
+              <label>Mot de passe</label><br>
+              <input type="password" name="mot_de_passe" required>
+            <p>
+              <button 1 type="submit">S'inscrire</button>
+              <button 2 type="reset">Réinitialiser</button>
+            </p>
+        </form>
+    </section>
+  </body>
