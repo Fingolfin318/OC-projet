@@ -24,14 +24,21 @@ label {
   }
 button {
     color: black;
-    font-size: 28px;
+    font-size: x-large;
     background-color: rgb(49, 136, 187);
     margin-left: 10px;
     border-radius: 16px;
 }
+body {
+    font-size: x-large;
+}
 input {
     border-radius: 6px;
+    font-size: x-large;
 }
 select {
     border-radius: 6px;
+}
+a {
+    font-size: large;
 }
