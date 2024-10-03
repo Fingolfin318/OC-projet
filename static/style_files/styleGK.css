@@ -27,8 +27,14 @@ button {
     font-size: 28px;
     background-color: blue;
     margin-left: 10px;
+    border-radius: 16px;
 }
-
+input {
+    border-radius: 6px;
+}
+select {
+    border-radius: 6px;
+}
 h1 { 
     color: blue; 
     display: flex;
