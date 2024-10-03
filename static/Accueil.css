@@ -9,8 +9,7 @@ h1 {
 }
 
 .menu{
-    flex:1;
-    background-color: aqua;
+    background-color: rgb(49, 136, 187);
     margin-left: 25px;
     margin-right: 35px;
 }
@@ -25,7 +24,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:  azure;
+    background-color:  rgb(49, 136, 187);
    
 }
 
@@ -49,9 +48,11 @@ a { padding: 10px 20px;
     margin : 30px;
     text-align:left;
     font-size: 30px;
-    border-style: dashed;
+    border-style: groove;
+    border-color: black;
     border-width: 2px; 
     color: rgb(0, 0, 0);
+    border-radius: 10px;
 }
 /*a:normal {background-color: yellow;} 
 a:visited {background-color:black; }*/
