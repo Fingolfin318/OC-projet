@@ -24,38 +24,21 @@ label {
   }
 button {
     color: black;
-    font-size: 28px;
-    background-color: blue;
+    font-size: x-large;
+    background-color: rgb(49, 136, 187);
     margin-left: 10px;
+    border-radius: 16px;
 }
-
-h1 { 
-    color: blue; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+body {
+    font-size: x-large;
 }
-p { 
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-} 
-label {
-    display: inline-block;
-    width: 140px;
-    text-align: center;
-  }
-button {
-    color: black;
-    font-size: 28px;
-    background-color: blue;
-    margin-left: 10px;
+input {
+    border-radius: 6px;
+    font-size: x-large;
+}
+select {
+    border-radius: 6px;
+}
+a {
+    font-size: large;
 }
