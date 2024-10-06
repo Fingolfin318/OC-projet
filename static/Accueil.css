@@ -49,6 +49,7 @@ p {
 a {
     padding: 10px 20px;
     margin : 30px;
+    
     text-align:left;
     font-size: 30px;
     border-style: groove;
@@ -58,5 +59,8 @@ a {
     border-radius: 10px;
 }
 
-a:hover {background-color: rgb(123, 150, 208);}
+a:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
 a:active {background-color: rgb(114, 223, 114);}
