@@ -7,8 +7,8 @@
         <title>Entreprise</title>
      </head>
      <body>
-        <section>
-          <h1>Voici ton entreprise : </h1>
+        <div class="title_content"><h1>Voici ton entreprise : </h1></div>
+        <section>  
             <form   action="/signin" 
                     method="post"
                     target="_self">
@@ -34,7 +34,7 @@
                     <input type="email" name="email" required>
                 </p>
                 <p>
-                    <label>Compétences nécessaires</label><br>
+                    <label>Professions utilisées</label><br>
                     <input type="text" name="compétences" required>
                 </p>
                 <p>
@@ -52,7 +52,7 @@
                         </select>
                 </p>
                 <p>
-                  <label>Formations et anciens métiers</label><br>
+                  <label>Formations possibles</label><br>
                   <input type="text" name="formations_et_anciens_métiers" required>
                 </p>   
                 <p>

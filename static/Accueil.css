@@ -15,7 +15,7 @@ h1 {
 }
 
 .content, .titre{
-    flex:1;
+    flex: 1;
     margin: 30px;
 }
 
