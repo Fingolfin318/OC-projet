@@ -1,12 +1,12 @@
 /* Couleurs principales */
 :root {
-    --background-color: #1A1A1D;
-    --text-color: #E0E0E0;
-    --primary-color: #2C3E50;
+    --background-color: lightskyblue;
+    --text-color: white;
+    --primary-color: rgb(49, 136, 187);
     --secondary-color: #34495E;
-    --accent-color: #4DA8DA;
-    --hover-color: #5DADE2;
-    --border-color: #34495E;
+    --accent-color: black;
+    --hover-color: rgb(56, 85, 101);
+    --border-color: blue;
 }
 
 /* Corps de la page */
