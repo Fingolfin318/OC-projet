@@ -8,7 +8,7 @@
     --hover-color: rgb(57, 79, 91);
     --hover-text-color: white;
     --button-color: rgb(112, 156, 181);
-    --border-color: blue;
+    --border-color: black;
 }
 
 /* Corps de la page */
@@ -118,7 +118,7 @@ a:hover {
 
 /* Bordures */
 hr {
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     margin: 1rem 0;
 }
 
