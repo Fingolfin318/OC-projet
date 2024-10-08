@@ -1,0 +1,152 @@
+/* Couleurs principales */
+:root {
+    --background-color: lightskyblue;
+    --text-color: black;
+    --primary-color: rgb(49, 136, 187);
+    --secondary-color: #649dd5;
+    --accent-color: black;
+    --hover-color: rgb(57, 79, 91);
+    --hover-text-color: white;
+    --button-color: rgb(112, 156, 181);
+    --border-color: black;
+}
+
+/* Corps de la page */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    border: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Section principale */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main h2 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+main p {
+    color: var(--text-color);
+}
+
+/* Boutons */
+button {
+    border-radius: 10px;
+    background-color: var(--button-color);
+    border: 2px solid;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+}
+
+/* Pied de page */
+footer {
+    border: 2px solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Liens */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--hover-text-color);
+}
+
+/* Bordures */
+hr {
+    border: 2px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+/* Classes utilitaires */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
