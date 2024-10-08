@@ -64,3 +64,8 @@ a:hover {
     color: white;
 }
 a:active {background-color: rgb(114, 223, 114);}
+.logo {
+    transition: 1s;
+    rotate: 360deg;
+    scale: 1,5;
+}
