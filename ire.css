@@ -1,11 +1,12 @@
 /* Couleurs principales */
 :root {
     --background-color: lightskyblue;
-    --text-color: white;
+    --text-color: black;
     --primary-color: rgb(49, 136, 187);
-    --secondary-color: #34495E;
+    --secondary-color: #649dd5;
     --accent-color: black;
-    --hover-color: rgb(56, 85, 101);
+    --hover-color: rgb(112, 156, 181);
+    --button-color: rgb(57, 79, 91);
     --border-color: blue;
 }
 
@@ -69,8 +70,9 @@ main p {
 
 /* Boutons */
 button {
-    background-color: var(--accent-color);
-    border: none;
+    border-end-end-radius: 3px;
+    background-color: var(--hover-color);
+    border: ;
     color: var(--text-color);
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -78,7 +80,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--hover-color);
+    background-color: var(--button-color);
 }
 
 /* Pied de page */
