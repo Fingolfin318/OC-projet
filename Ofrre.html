@@ -8,7 +8,7 @@
         <title>Entreprise</title>
      </head>
      <body>
-        <div class="title_content"><h1>Voici ton entreprise : </h1></div>
+        <div class="title_content"><h1>Voici ton ofrre de poste : </h1></div>
         <section>  
             <form   action="/signin" 
                     method="post"
@@ -22,7 +22,7 @@
                     <input type="email" name="email" required>
                 </p>
                 <p>
-                    <label>Professions utilisées</label><br>
+                    <label>Type(s) recherché(s)</label><br>
                     <input type="text" name="compétences" required>
                 </p>
                 <p>
@@ -40,7 +40,11 @@
                         </select>
                 </p>
                 <p>
-                  <label>Formations nécessaire</label><br>
+                    <label>Durée du contrat</label><br>
+                    <input type="text" name="durée_contrat" required>
+                </p>
+                <p>
+                  <label>Formation(s) nécessaire(s)</label><br>
                   <input type="text" name="formations_et_anciens_métiers" required>
                 </p>
                 <p>
