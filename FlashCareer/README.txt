@@ -15,4 +15,9 @@ La première page web est la page d'accueil qui comporte une description briève
 Il y a une page de connection où il faut entrer son adresse email et son mot de passe du site.
 Cette page renvoie à deux pages différentes selon le profil de l'utilisateur : soit en tant que chercheur d'emploi ou soit en tant que patron/employeur.
     Pour les chercheurs d'emploi : sur cette page il faut remplir son CV sous forme de formulaire.
-    Pour les patrons : sur cette page il y a un formulaire 
+    Pour les patrons : sur cette page il y a un formulaire qui demande les informations concernant l'email, la profession, le domaine, ...
+Il y a évidemment la page qui affiche les offres d'emploi ou l'utilisateur peut postuler.
+Mais sans oublié aussi la page qui permet au patron de poster une offre qui l'intéresse.
+Sans oublier la page qui affiche le profil de l'utilisateur si il est étudiant ou patron avec son nom, prénom, ...
+Et finalement il y a la page "à propos du site" qui affiche différente information sur le site et ses créateurs.
+
