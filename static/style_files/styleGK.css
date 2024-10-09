@@ -55,7 +55,9 @@ select {
 a {
     font-size: large;
     text-decoration: none;
+    color: black;
 }
+
 .title_content{
     height: 100px;
     display: flex;
@@ -66,8 +68,7 @@ a {
     margin-right: 450px;
     margin-bottom: 45px;
     border-radius: 6px;
-    border: solid;
-    border: black;
+    border: 4px solid, black;
 }
 .signincontent_button_link{
     margin-bottom: 50px;
