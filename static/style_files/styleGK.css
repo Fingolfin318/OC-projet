@@ -30,9 +30,9 @@ button {
     border-radius: 16px;
 }
 .submit{
-    background-color: rgb(10, 90, 133);
+    background-color: rgb(49, 136, 187);
 }
-button:hover{background-color: rgb(80, 126, 202); padding: 12px 23px;}
+button:hover{background-color: rgb(80, 126, 202); padding: 8px 14px;}
 body {
     font-size: x-large;
 }
