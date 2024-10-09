@@ -64,3 +64,6 @@ a:hover {
     border-color: white;
 }
 a:active {background-color: rgb(5, 25, 59);}
+.br {
+    margin-bottom: 45px;
+}
