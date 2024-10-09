@@ -32,7 +32,16 @@ button {
 .submit{
     background-color: rgb(49, 136, 187);
 }
-button:hover{background-color: rgb(80, 126, 202); padding: 8px 14px;}
+button:hover{background-color: rgb(80, 126, 202); padding: 4px 8px;
+}
+a:active{
+    color: white;
+    background-color: rgb(35, 35, 35);
+}
+a:hover{
+    color: white;
+    background-color: rgb(80, 126, 202);
+}
 body {
     font-size: x-large;
 }
@@ -45,6 +54,7 @@ select {
 }
 a {
     font-size: large;
+    text-decoration: none;
 }
 .title_content{
     height: 100px;
@@ -56,6 +66,8 @@ a {
     margin-right: 450px;
     margin-bottom: 45px;
     border-radius: 6px;
+    border: solid;
+    border: black;
 }
 .signincontent_button_link{
     margin-bottom: 50px;
