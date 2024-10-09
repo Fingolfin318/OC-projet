@@ -63,6 +63,3 @@ a:hover {
     color: white;
 }
 a:active {background-color: rgb(114, 223, 114);}
-.titre#myDiv {
-    transform: rotate(60deg);
-}
