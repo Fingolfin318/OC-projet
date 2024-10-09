@@ -22,7 +22,7 @@ label {
     width: 140px;
     text-align: center;
   }
-button, a {
+button {
     color: black;
     font-size: x-large;
     background-color: rgb(49, 136, 187);
