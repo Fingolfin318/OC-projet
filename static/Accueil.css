@@ -27,9 +27,17 @@ h1 {
     background-color:  rgb(49, 136, 187);
     margin-left: -50px;
     margin-top: 0px;
-   
 }
-
+.img{
+    animation-iteration-count: infinite;
+    animation-name: example;
+    animation-duration: 20s;
+}
+@keyframes example {
+    0%   {rotate: 0deg;}
+    50%  {rotate: 1800deg;}
+    100% {rotate: 0deg;}
+}
 .titre-content{
     flex: 3;
     flex-direction: column;
