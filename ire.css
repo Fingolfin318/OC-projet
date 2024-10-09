@@ -1,4 +1,4 @@
-/* Couleurs principales */
+
 :root {
     --background-color: lightskyblue;
     --text-color: blue;
@@ -11,7 +11,7 @@
     --border-color: black;
 }
 
-/* Corps de la page */
+
 body {
     background-color: var(--background-color);
     color: var(--accent-color);
@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* En-tête */
+
 header {
     border: 2px solid;
     border-bottom-left-radius: 20px;
@@ -40,7 +40,7 @@ header h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Navigation */
+
 nav {
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@ nav a:hover {
     padding: 15px 28px;
 }
 
-/* Section principale */
+
 main {
     padding: 2rem;
     max-width: 800px;
@@ -76,7 +76,7 @@ main p {
     color: var(--accent-color);
 }
 
-/* Boutons */
+
 button {
     border-radius: 10px;
     background-color: var(--button-color);
@@ -93,7 +93,7 @@ button:hover {
     padding: 10px 18px;
 }
 
-/* Pied de page */
+
 footer {
     border: 2px solid;
     border-top-left-radius: 20px;
@@ -110,7 +110,7 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Liens */
+
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -121,14 +121,8 @@ a:hover {
     color: var(--hover-text-color);
 }
 
-/* Bordures */
+
 hr {
     border: 2px solid var(--border-color);
     margin: 1rem 0;
 }
-
-/* Classes utilitaires */
-.text-center {
-    text-align: center;
-}
-
