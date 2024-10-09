@@ -25,7 +25,6 @@ label {
 button {
     color: black;
     font-size: x-large;
-    background-color: rgb(174, 183, 188);
     margin-left: 10px;
     border-radius: 16px;
 }
@@ -72,6 +71,7 @@ a {
 }
 .signincontent_button_link{
     margin-bottom: 50px;
+    background-color: rgb(49, 136, 187);
 }
 .retour{
     display: flex;
