@@ -25,10 +25,14 @@ label {
 button {
     color: black;
     font-size: x-large;
-    background-color: (80, 126, 202);
+    background-color: rgb(174, 183, 188);
     margin-left: 10px;
     border-radius: 16px;
 }
+.submit{
+    background-color: rgb(10, 90, 133);
+}
+button:hover{background-color: rgb(80, 126, 202); padding: 12px 23px;}
 body {
     font-size: x-large;
 }
