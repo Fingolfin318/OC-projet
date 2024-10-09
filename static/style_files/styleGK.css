@@ -27,6 +27,7 @@ button {
     font-size: x-large;
     margin-left: 10px;
     border-radius: 16px;
+    background-color: rgb(49, 136, 187)
 }
 .submit, .signincontent_button_link {
     background-color: rgb(49, 136, 187);
@@ -84,3 +85,5 @@ a {
     margin-left: 700px;
     margin-right: 450px;
 }
+
+.retour:hover{background-color: rgb(80, 126, 202);}
