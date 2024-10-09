@@ -22,7 +22,7 @@ label {
     width: 140px;
     text-align: center;
   }
-button {
+button, a {
     color: black;
     font-size: x-large;
     background-color: rgb(49, 136, 187);
@@ -61,4 +61,5 @@ a {
     justify-content: left;
     margin-left: 50px;
     margin-right: 50px;
+    border: 
 }
