@@ -11,6 +11,8 @@ Si on cherche un emploi, il faudra remplir un CV qui sera retenu en envoyer quan
 Si on est employeur, on a la possibilité de poster une offre d'emploie qui sera mise en ligne et une offre sur laquelle un chercheur d'emploi peut postuler.
 
 DIFFERENTE PAGES DU PROJET :
-
-Il y a tout d'abord une page de connection ou il faut entrer son adresse email et son mot de passe du site.
-ensuite 
+La première page web est la page d'accueil qui comporte une description briève et humoristique du site, avec différent bouton qui renvoie aux différentes pages du site : Profil, Postuler à une offre, Poster une offre, A propos du site, Se connecter.
+Il y a une page de connection où il faut entrer son adresse email et son mot de passe du site.
+Cette page renvoie à deux pages différentes selon le profil de l'utilisateur : soit en tant que chercheur d'emploi ou soit en tant que patron/employeur.
+    Pour les chercheurs d'emploi : sur cette page il faut remplir son CV sous forme de formulaire.
+    Pour les patrons : sur cette page il y a un formulaire 
