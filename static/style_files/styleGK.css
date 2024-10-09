@@ -51,6 +51,7 @@ a {
     margin-left: 450px;
     margin-right: 450px;
     margin-bottom: 45px;
+    border-radius: 6px;
 }
 .signincontent_button_link{
     margin-bottom: 50px;
