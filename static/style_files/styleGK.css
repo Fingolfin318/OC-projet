@@ -51,6 +51,7 @@ a {
     margin-left: 450px;
     margin-right: 450px;
     margin-bottom: 45px;
+    border-radius: 6px;
 }
 .signincontent_button_link{
     margin-bottom: 50px;
@@ -61,4 +62,7 @@ a {
     justify-content: left;
     margin-left: 50px;
     margin-right: 50px;
+    border-radius: 6px;
+    border-color: black; 
+    background-color:  rgb(49, 136, 187);
 }

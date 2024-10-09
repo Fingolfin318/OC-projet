@@ -30,7 +30,6 @@ h1 {
    
 }
 
-
 .titre-content{
     flex: 3;
     flex-direction: column;
@@ -46,10 +45,10 @@ p {
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 a {
     padding: 10px 20px;
     margin : 30px;
-    
     text-align:left;
     font-size: 30px;
     border-style: groove;
@@ -64,8 +63,3 @@ a:hover {
     color: white;
 }
 a:active {background-color: rgb(114, 223, 114);}
-.logo {
-    transition: 1s;
-    rotate: 360deg;
-    scale: 1,5;
-}
