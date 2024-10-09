@@ -2,24 +2,39 @@
 <html>
     <head><meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="static/style_files/style.css"> 
-        <link rel="stylesheet" href="static/style gen.css"> 
+        <link rel="stylesheet" href="static\styleGK.css">
+        <link rel="stylesheet" href="static\style_gen.css"> 
+        <link rel="icon" href="images/logo.jpg" type="image/x-icon">
         <title>CV</title>
      </head>
  <body>
+    <div class="title_content"><h1>Voici ton CV :</h1></div>
     <section>
-      <h1>Voici ton CV :</h1>
-        <form action="/signin" 
+      <form action="/signin" 
               method="post"
               target="_self">
             <p>
               <label>
-              <input type="radio" name="title" value="mr">
+              <input type="radio" name="genre" value="mr">
                 Mr
               </label>
               <label>
-              <input type="radio" name="title" value="mme">
+              <input type="radio" name="genre" value="mme">
                 Mme
+              </label>
+              <label>
+              <input type= "radio" name="genre" value="hélicoptère_de_combat">
+                Hélicoptère de combat
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type= "radio" name="type" value="étudiant">
+                  Étudiant
+              </label>
+              <label>
+                <input type= "radio" name="type" value="chercheur_emploi">
+                  Chercheur d'emploi
               </label>
             </p>
             <p>
@@ -76,7 +91,7 @@
               <button 2 type="reset">Réinitialiser</button>
             </p>
             <p>
-              <a href="Acceuil.html">Se connecter</a>
+              <div class="retour"><a href="Connexions.html">Retour</a></div>
             </p>
         </form>
     </section>

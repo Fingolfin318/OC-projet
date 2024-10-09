@@ -2,27 +2,40 @@
 <html>
     <head> <meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="static\style_files\styleGK.css">
+        <link rel="stylesheet" href="static\styleGK.css">
         <link rel="stylesheet" href="static\style_gen.css"> 
-        <link rel="icon" href="logo.jpg" type="image/x-icon">
+        <link rel="icon" href="images/logo.jpg" type="image/x-icon">
         <title>Entreprise</title>
      </head>
      <body>
-        <div class="title_content"><h1>Voici ton ofrre de poste : </h1></div>
+        <div class="title_content"><h1>Voici ton entreprise : </h1></div>
         <section>  
             <form   action="/signin" 
                     method="post"
                     target="_self">
+                <p> <label>
+                    <input type="radio" name="title" value="mr">
+                    Mr
+                    </label>
+                    <label>
+                    <input type="radio" name="title" value="mme">
+                    Mme
+                    </label>
+                </p>
                 <p>
-                    <label>Entreprise</label><br>
+                    <label>Nom</label><br>
                     <input type="text" name="nom" required>
+                </p>
+                <p>
+                    <label>Prénom</label><br>
+                    <input type="text" name="prénom" required>
                 </p>
                 <p>
                     <label>Email</label><br>
                     <input type="email" name="email" required>
                 </p>
                 <p>
-                    <label>Type(s) recherché(s)</label><br>
+                    <label>Professions utilisées</label><br>
                     <input type="text" name="compétences" required>
                 </p>
                 <p>
@@ -40,17 +53,17 @@
                         </select>
                 </p>
                 <p>
-                    <label>Durée du contrat</label><br>
-                    <input type="text" name="durée_contrat" required>
-                </p>
-                <p>
-                  <label>Formation(s) nécessaire(s)</label><br>
+                  <label>Formations possibles</label><br>
                   <input type="text" name="formations_et_anciens_métiers" required>
-                </p>
+                </p>   
                 <p>
-                  <button type="submit">Poster</button>
+                  <label>Mot de passe</label><br>
+                  <input type="password" name="mot_de_passe" required>
+                <p>
+                  <button type="submit">S'inscrire</button>
+                  <button type="reset">Réinitialiser</button>
                 </p>
-                <p><div class="retour"><a href="Accueil.html">Retour</a></div></p>
+                <p><div class="retour"><a href="Connexions.html">Retour</a></div></p>
             </form>
         </section>
       </body>
