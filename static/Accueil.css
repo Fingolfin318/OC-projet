@@ -69,6 +69,6 @@ a:active {background-color: rgb(114, 223, 114);}
     transition: width 2s, height 2s;
 }
 .titre-content :hover {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
