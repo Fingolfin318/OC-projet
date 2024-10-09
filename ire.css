@@ -14,7 +14,7 @@
 /* Corps de la page */
 body {
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--accent-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s;
@@ -71,7 +71,7 @@ main h2 {
 }
 
 main p {
-    color: var(--text-color);
+    color: var(--accent-color);
 }
 
 /* Boutons */
