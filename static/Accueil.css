@@ -63,10 +63,10 @@ a:hover {
     color: white;
 }
 a:active {background-color: rgb(114, 223, 114);}
-.titre-content {
+.titre {
     transition: width 2s, height 2s;
 }
-.titre-content :hover {
+.titre :hover {
     width: 250px;
     height: 250px;
 }
