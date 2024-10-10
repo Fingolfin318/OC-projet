@@ -25,21 +25,19 @@ label {
 button {
     color: black;
     font-size: x-large;
-    background-color: rgb(174, 183, 188);
     margin-left: 10px;
     border-radius: 16px;
+    background-color: rgb(49, 136, 187)
 }
-.submit{
+.submit, .signincontent_button_link {
     background-color: rgb(49, 136, 187);
 }
 button:hover{background-color: rgb(80, 126, 202); padding: 4px 8px;
 }
 a:active{
-    color: white;
     background-color: rgb(35, 35, 35);
 }
 a:hover{
-    color: white;
     background-color: rgb(80, 126, 202);
 }
 body {
@@ -72,13 +70,20 @@ a {
 }
 .signincontent_button_link{
     margin-bottom: 50px;
+    background-color: rgb(49, 136, 187);
 }
 .retour{
-    display: flex;
+    color: black;
+    background-color: rgb(174, 183, 188);
+    border: 3px solid black;
+    margin-top: 60px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
     align-items: center;
-    justify-content: left;
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 6px;
-    border-color: black; 
+    margin-left: 700px;
+    margin-right: 450px;
 }
+
+.retour:hover{background-color: rgb(80, 126, 202);}
