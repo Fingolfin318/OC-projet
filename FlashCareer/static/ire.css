@@ -126,3 +126,8 @@ hr {
     border: 2px solid var(--border-color);
     margin: 1rem 0;
 }
+
+/* Classes utilitaires */
+.text-center {
+    text-align: center;
+}
