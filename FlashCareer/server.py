@@ -12,3 +12,30 @@ app = Flask("flashcareer")
 app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
+
+
+
+
+@app.route("/inscription_chercheur", methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template("inscription_chercheur.html.mako", error=None)
+    elif request.method == "POST":
+        db = get_db()
+        try:
+            if request.form["password"] != request.form["confirm_password"]:
+                raise ValidationError("Mot de passe mal confirmé!")
+            db.execute(
+                """
+                INSERT INTO CHERCHEURS (pseudo, password, created_at)
+                VALUES (?, ?, ?);
+                """,
+                (request.form["pseudo"], request.form["password"], today()))
+            db.commit()
+            return redirect(url_for("welcome"), code=303)
+        except ValidationError as e:
+            return render_template("register.html.mako", error=str(e))
+        except IntegrityError as i:
+            return render_template("register.html.mako", error=str(i))
+        finally : 
+            db.rollback()
