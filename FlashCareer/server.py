@@ -24,15 +24,15 @@ def register():
         try:
             db.execute(
                 """
-                INSERT INTO chercheurs (genre, nom, prénom, email, num, adresse, langues_et_niveaux, compétences, domaines, formations_et_anc_métiers, MDP)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+                INSERT INTO Users (type, genre, nom, prénom, email, domaine, mdp)
+                VALUES (?, ?, ?, ?, ?, ?, ?);
                 """,
-                (request.form["genre"], request.form["nom"],request.form["prénom"],request.form["email"],request.form["num"],request.form["adresse"],request.form["langues_et_niveaux"],request.form["compétences"],request.form["domaines"],request.form[""],request.form["nom"], today()))
+                (request.form["genre"], request.form["nom"],request.form["prénom"],request.form["email"],request.form["type"],request.form["email"],request.form["domaine"],request.form["mdp"]))
             db.commit()
-            return redirect(url_for("welcome"), code=303)
+            return redirect(url_for("accueil"), code=303)
         except ValidationError as e:
-            return render_template("register.html.mako", error=str(e))
+            return render_template("register.html.mako", error=str('c pa bien'))
         except IntegrityError as i:
-            return render_template("register.html.mako", error=str(i))
+            return render_template("register.html.mako", error=str('c pa bien'))
         finally : 
             db.rollback()
