@@ -13,4 +13,3 @@ app = Flask("flashcareer")
 app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
-##
