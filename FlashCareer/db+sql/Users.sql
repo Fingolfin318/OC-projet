@@ -1,6 +1,6 @@
 pragma encoding="UTF-8"
 --dd--
-create table patrons (
+create table users (
     key integer primary key,
     nom text not null,
     prenom text not null,
