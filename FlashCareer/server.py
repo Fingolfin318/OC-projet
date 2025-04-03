@@ -13,39 +13,3 @@ app = Flask("flashcareer")
 app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
-
-@app.route("/Connexions", methods=["GET", "POST"])
-def Connexions():
-    if "user_id" in session: #si utilisateur est déjà connecté
-        return redirect(url_for("welcome"))
-    if request.method == "GET":
-        return render_templates("Connexions.html.mako", error=None)
-    elif request.method =="POST":
-        db = get_db()
-        try:
-            cursor = db.execute("select * from users where nom=? and where prénom=? limit 1", 
-                                (request.form["nom", "prénom"], )) 
-            user=cursor.fetchone()
-            if user is None :
-                raise ValidationError("nom ou prénom invalide")
-            if user["mdp"] != request.form["mdp"]:
-                raise ValidationError("Mot de passe invalide")
-            session.clear()
-            session["user_id"] = user["id"]
-            app.loger.info("LOG IN '%s' (id=%d)", user['prénom', 'nom'], user['id'])
-            return redirect(url_for("Acceuil"), code=303)
-        except ValidationError as e:
-            return render_templates("login.html.mako", error=str(e))
-        
-@app.route("/Acceuil")
-def acceuil():
-    logged_user = load_connected_user()
-    db = get_db()
-    cursor = db.execute("SELECT * FROM users ORDER BY random() LIMIT 1")
-    user = cursor.fetchone()
-    return render_template("Acceuil.html.mako",
-                           heure_actuelle=str(datetime.now())
-                           day_user_pseudo=user['pseudo'],
-                           logged_user=logged_use)
-
-app.run(debug=True)
