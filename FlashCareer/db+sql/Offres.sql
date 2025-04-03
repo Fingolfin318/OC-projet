@@ -1,7 +1,7 @@
 pragma encoding="UTF-8"
 --dd--
 create table offres (
-    key integer primary key,
+    id integer primary key,
     patron_entreprise text not null,
     domaine text not null,
     duration text not null,
@@ -11,7 +11,7 @@ create table offres (
 );
 --dd--
 create table postulations (
-    key integer primary key,
+    id integer primary key,
     chercheur_nom text not null,
     chercheur_prénom text not null,
     CV text not null,
