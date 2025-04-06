@@ -14,6 +14,17 @@ app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
 
+def load_connected_user():
+    user_id = session.get('user_id')
+    if user_id is None :
+        user = get_db().execute('select * from users where id = ? limit 1', (user_id,)).fetchone()
+        return user
+
+def load_type_user():
+    user_type = session.get('user_type')
+    if user_type is None :
+        user = get_db().execute('select * from users where type = ? limit 1', (user_type,)).fetchone()
+        return user
 
 @app.route("/inscription_chercheur", methods=["GET", "POST"])
 def register():
