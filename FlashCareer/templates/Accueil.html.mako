@@ -5,7 +5,7 @@
     <meta name="Michael Ireneo Guillaume" content="FlashCareer">
     <link rel="stylesheet" type="text/css" href="/static/Accueil.css">
     <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
-    <link rel="icon" href="images/logo.jpg" type="/image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
     <title>Accueil FlashCareer</title>
 </head>
 <body>
@@ -15,12 +15,12 @@
             %if logged_user is None : 
             <div class="br"><a href="à_propos.html">A propos du site</a></div>
             <a href="Connexions.html">Se connecter</a>
-            %elif user_type = 'patron' :
+            %elif user_type == 'patron' :
             <div class="br"><a href="profil.html">Profil</a></div>
             <div class="br"><a href="à_propos.html">A propos du site</a></div>
             <div class="br"><a href="Offre.html">Poster une offre</a></div>
             <a href="Connexions.html">Se connecter</a>
-            %elif user_type = 'chercheur' or logged_user.type = 'étudiant' :
+            %elif user_type == 'chercheur' or logged_user.type == 'étudiant' :
             <div class="br"><a href="profil.html">Profil</a></div>
             <div class="br"><a href="à_propos.html">A propos du site</a></div>
             <div class="br"><a href="postuler.html">Postuler à une offre</a></div>

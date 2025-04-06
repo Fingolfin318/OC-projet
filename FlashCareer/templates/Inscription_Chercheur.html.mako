@@ -2,38 +2,37 @@
 <html>
     <head><meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="FlashCareer/static\styleGK.css">
-        <link rel="stylesheet" href="FlashCareer/static\style_gen.css"> 
-        <link rel="icon" href="FlashCareer/images/logo.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="\static\styleGK.css">
+        <link rel="stylesheet" href="\static\style_gen.css"> 
+        <link rel="icon" href="\images/logo.jpg" type="image/x-icon">
         <title>CV</title>
      </head>
  <body>
-    <div class="title_content"><h1>Voici ton CV :</h1></div>
     <section>
       <form action="/signin" 
               method="post"
               target="_self">
             <p>
               <label>
-              <input type="radio" name="genre" value="mr">
+              <input type="radio" name="genre" value="mr" required>
                 Mr
               </label>
               <label>
-              <input type="radio" name="genre" value="mme">
+              <input type="radio" name="genre" value="mme" required>
                 Mme
               </label>
               <label>
-              <input type= "radio" name="genre" value="hélicoptère_de_combat">
+              <input type= "radio" name="genre" value="hélicoptère_de_combat" required>
                 Hélicoptère de combat
               </label>
             </p>
             <p>
               <label>
-                <input type= "radio" name="type" value="étudiant">
+                <input type= "radio" name="type" value="étudiant" required>
                   Étudiant
               </label>
               <label>
-                <input type= "radio" name="type" value="chercheur_emploi">
+                <input type= "radio" name="type" value="chercheur_emploi" required>
                   Chercheur d'emploi
               </label>
             </p>
@@ -50,22 +49,6 @@
               <input type="email" name="email" required>
             </p>
             <p>
-              <label>Numéro de téléphone</label><br>
-              <input type="tel" name="numéro_de_téléphone" required>
-            </p>
-            <p>
-              <label>Adresse</label><br>
-              <input type="text" name="adresse" required>
-            </p>
-            <p>
-              <label>Langues et niveaux</label><br>
-              <input type="text" name="langues_et_niveaux">
-            </p>
-            <p>
-              <label>Compétences</label><br>
-              <input type="text" name="compétences" required>
-            </p>
-            <p>
                 <label>Domaines</label><br>
                   <select>
                     <option>Santé</option>
@@ -79,10 +62,6 @@
                     <option>Informatique</option>
                   </select>
             </p>
-            <p>
-              <label>Formations et anciens métiers</label><br>
-              <input type="text" name="formations_et_anciens_métiers" required>
-            </p>   
             <p>
               <label>Mot de passe</label><br>
               <input type="password" name="mot_de_passe" required>
