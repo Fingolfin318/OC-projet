@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 from flask import Flask, abort, session   # Importe le type Flask.
 from datetime import datetime
 from flask_mako import render_template, MakoTemplates
-from flask_sqlite import SQLiteExtension, get_db
+from flask_sqlite import SQLiteExtension, get_db, sqlite3
 from random import randint
 from flask import request, redirect, url_for
 from sqlite3 import IntegrityError
@@ -13,6 +13,7 @@ app = Flask("flashcareer")
 app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
+app.secret_key = b't\t\x01\x82/\xbc\xdd\x9fE0\x01S\xc5Ze@'
 
 def load_connected_user():
     user_id = session.get('user_id')
@@ -72,15 +73,16 @@ def Connexions():
         except ValidationError as e:
             return render_templates("login.html.mako", error=str(e))
         
-@app.route("/Acceuil")
-def acceuil():
-    logged_user = load_connected_user()
-    db = get_db()
-    cursor = db.execute("SELECT * FROM users ORDER BY random() LIMIT 1")
-    user = cursor.fetchone()
-    return render_template("Acceuil.html.mako",
-                           heure_actuelle=str(datetime.now())
-                           day_user_pseudo=user['pseudo'],
-                           logged_user=logged_use)
+#@app.route("/Acceuil")
+#def acceuil():
+   # logged_user = load_connected_user()
+    #db = get_db()
+    #cursor = db.execute("SELECT * FROM users ORDER BY random() LIMIT 1")
+   # user = cursor.fetchone()
+    #return render_template("Acceuil.html.mako",
+                           #heure_actuelle=str(datetime.now())
+                           #day_user_pseudo=user['pseudo'],
+#                           logged_user=logged_use)
+
 
 app.run(debug=True)
