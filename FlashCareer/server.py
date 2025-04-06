@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 from flask import Flask, abort, session   # Importe le type Flask.
 from datetime import datetime
 from flask_mako import render_template, MakoTemplates
-from flask_sqlite import SQLiteExtension, get_db, sqlite3
+from flask_sqlite import SQLiteExtension, sqlite3, get_db
 from random import randint
 from flask import request, redirect, url_for
 from sqlite3 import IntegrityError
@@ -24,7 +24,7 @@ def load_connected_user():
 def load_type_user():
     user_type = session.get('user_type')
     if user_type is None :
-        user = get_db().execute('select * from users where type = ? limit 1', (user_type,)).fetchone()
+        user = get_db().execute('select type from users where id = user_id limit 1', (user_type,)).fetchone()
         return user
 
 @app.route("/inscription_chercheur", methods=["GET", "POST"])
@@ -73,16 +73,20 @@ def Connexions():
         except ValidationError as e:
             return render_templates("login.html.mako", error=str(e))
         
-#@app.route("/Acceuil")
-#def acceuil():
-   # logged_user = load_connected_user()
-    #db = get_db()
-    #cursor = db.execute("SELECT * FROM users ORDER BY random() LIMIT 1")
-   # user = cursor.fetchone()
-    #return render_template("Acceuil.html.mako",
-                           #heure_actuelle=str(datetime.now())
-                           #day_user_pseudo=user['pseudo'],
-#                           logged_user=logged_use)
+@app.route('/')
+def index():
+    redirect(url_for("Acceuil"), code=303)
+
+@app.route("/Acceuil")
+def acceuil():
+    logged_user = load_connected_user()
+    user_type = load_type_user
+    db = get_db()
+    cursor = db.execute("SELECT * FROM users ORDER BY random() LIMIT 1")
+    user = cursor.fetchone()
+    return render_template("Acceuil.html.mako",
+                           logged_user=logged_user,
+                           user_type=user_type)
 
 
 app.run(debug=True)

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="Michael Ireneo Guillaume" content="FlashCareer">
-    <link rel="stylesheet" type="text/css" href="static/Accueil.css">
-    <link rel="stylesheet" type="text/css" href="static/style_gen.css">
-    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/Accueil.css">
+    <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
+    <link rel="icon" href="images/logo.jpg" type="/image/x-icon">
     <title>Accueil FlashCareer</title>
 </head>
 <body>
