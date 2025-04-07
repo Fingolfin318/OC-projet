@@ -28,8 +28,8 @@
                     </p>
                 </div>
             </form>
-            <h3><button class="signnincontent_button_link"><a href="CV.html">Pour s'inscrire en tant qu'étudiant ou chercheur d'emploi, c'est ici : </a></button></h3>
-            <h3><button class="signnincontent_button_link"><a href="Entreprise.html">Pour s'inscrire en tant que patron, c'est ici : </a></button></h3>
+            <h3><button class="signnincontent_button_link"><a href="Inscriptions_Chercheur.html.mako">Pour s'inscrire en tant qu'étudiant ou chercheur d'emploi, c'est ici : </a></button></h3>
+            <h3><button class="signnincontent_button_link"><a href="Inscriptions_Employeur.html.mako">Pour s'inscrire en tant que patron, c'est ici : </a></button></h3>
         </section>
-        <div class="retour"><a href="Accueil.html">Retour</a></div>
+        <div class="retour"><a href="Accueil.html.mako">Retour</a></div>
     </body>

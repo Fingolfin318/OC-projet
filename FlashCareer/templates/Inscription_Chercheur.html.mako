@@ -70,7 +70,7 @@
               <button 2 type="reset">Réinitialiser</button>
             </p>
             <p>
-              <div class="retour"><a href="Connexions.html">Retour</a></div>
+              <div class="retour"><a href="Connexions.html.mako">Retour</a></div>
             </p>
         </form>
     </section>

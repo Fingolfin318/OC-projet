@@ -8,18 +8,15 @@
 </head>
 
 <body>
-    <!-- En-tête -->
     <header>
         <h1>Profil</h1>
     </header>
-
-    <!-- Section principale du profil -->
     <main>
         <section class="profile-info text-center">
             <h2>Prénom : <span>Djibril</span></h2>
             <h2>Nom : <span>Dupont</span></h2>
             <h2>Status : <span>Chercheur d'emploi</span></h2>
-            <h2>Catégorie(s) : <span>Santé</span></h2>
+            <h2>Catégorie : <span>Santé</span></h2>
         </section>
     </main>
     <footer>

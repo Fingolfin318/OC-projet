@@ -62,20 +62,20 @@ def register_c():
             db.commit()
             return redirect(url_for("Accueil.html.mako"), code=303)
         except IntegrityError as e:
-            return render_template("Inscription_Chercheur.html.mako", error=str('Valeurs incorrectes'))
+            return render_template("Inscription_Chercheur.html.mako", error=str('Valeurs incorrectes...'))
         finally : 
             db.rollback()
 
 @app.route("/Connexions", methods=["GET", "POST"])
 def Connexions():
     if "user_id" in session: #si utilisateur est déjà connecté
-        return redirect(url_for("Accueil.html.mako"))
+        return redirect(url_for("Accueil.html.mako", error=str('Vous êtes déjà connecté !')))
     if request.method == "GET":
         return render_template("Connexions.html.mako", error=None)
     elif request.method =="POST":
         db = get_db()
         try:
-            cursor = db.execute("select * from users where nom=? and where prénom=? limit 1", 
+            cursor = db.execute("select * from users where nom=? and where prenom=? limit 1", 
                                 (request.form["nom", "prénom"], )) 
             user=cursor.fetchone()
             if user is None :
@@ -84,7 +84,7 @@ def Connexions():
                 raise ValidationError("Mot de passe invalide")
             session.clear()
             session["user_id"] = user["id"]
-            app.loger.info("LOG IN '%s' (id=%d)", user['prénom', 'nom'], user['id'])
+            app.loger.info("LOG IN '%s' (id=id)", user['prenom', 'nom'], user['id'])
             return redirect(url_for("Accueil.html.mako"), code=303)
         except ValidationError as e:
             return render_template("login.html.mako", error=str(e))
