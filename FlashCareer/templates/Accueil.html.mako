@@ -13,16 +13,16 @@
         <div class = "menu">
             <h2>Accueil</h2>
             %if logged_user is None : 
-            <div class="br"><a href="à_propos.html.mako">A propos du site</a></div>
+            <div class="br"><a href="a_propos.html.mako">À propos du site</a></div>
             <a href="Connexions.html.mako">Se connecter</a>
             %elif user_type == 'patron' :
             <div class="br"><a href="profil.html.mako">Profil</a></div>
-            <div class="br"><a href="à_propos.html.mako">A propos du site</a></div>
+            <div class="br"><a href="a_propos.html.mako">A propos du site</a></div>
             <div class="br"><a href="Offre.html.mako">Poster une offre</a></div>
             <a href="Connexions.html.mako">Se connecter</a>
             %elif user_type == 'chercheur' or logged_user.type == 'étudiant' :
             <div class="br"><a href="profil.html.mako">Profil</a></div>
-            <div class="br"><a href="à_propos.html.mako">A propos du site</a></div>
+            <div class="br"><a href="a_propos.html.mako">A propos du site</a></div>
             <div class="br"><a href="postuler.html.mako">Postuler à une offre</a></div>
             <a href="Connexions.html.mako">Se connecter</a>
             %endif

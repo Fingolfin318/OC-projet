@@ -68,7 +68,7 @@ def register_c():
 
 @app.route("/Connexions", methods=["GET", "POST"])
 def Connexions():
-    if "user_id" in session: #si utilisateur est déjà connecté
+    if "user_id" in session: 
         return redirect(url_for("Accueil.html.mako", error=str('Vous êtes déjà connecté !')))
     if request.method == "GET":
         return render_template("Connexions.html.mako", error=None)
@@ -91,14 +91,17 @@ def Connexions():
         
 @app.route('/')
 def index():
-    redirect(url_for("Accueil"), code=303)
+    return redirect(url_for("accueil"), code=303)
 
 @app.route("/accueil")
-def accueuil():
+def accueil():
     logged_user = load_connected_user()
     user_type = load_type_user
     return render_template("Accueil.html.mako", logged_user=logged_user, user_type=user_type)
 
-
+@app.route('/a_propos')
+def a_propos() :
+    marque = 'Pignouf.exe'
+    return render_template('a_propos.html.mako', marque=marque)
 
 app.run(debug=True)
