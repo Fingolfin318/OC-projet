@@ -2,9 +2,9 @@
 <html>
     <head><meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="\static\styleGK.css">
-        <link rel="stylesheet" href="\static\style_gen.css"> 
-        <link rel="icon" href="\images/logo.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="/static/styleGK.css">
+        <link rel="stylesheet" href="/static/style_gen.css"> 
+        <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
         <title>CV</title>
      </head>
  <body>
@@ -70,7 +70,7 @@
               <button 2 type="reset">Réinitialiser</button>
             </p>
             <p>
-              <div class="retour"><a href="Connexions.html.mako">Retour</a></div>
+              <div class="retour"><a href="${url_for('connexions')}">Retour</a></div>
             </p>
         </form>
     </section>

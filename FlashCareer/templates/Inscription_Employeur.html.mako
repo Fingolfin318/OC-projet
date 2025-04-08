@@ -2,9 +2,9 @@
 <html>
     <head> <meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="\static\styleGK.css">
-        <link rel="stylesheet" href="\static\style_gen.css"> 
-        <link rel="icon" href="\images/logo.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="/static/styleGK.css">
+        <link rel="stylesheet" href="/static/style_gen.css"> 
+        <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
         <title>Entreprise</title>
      </head>
      <body>
@@ -24,7 +24,7 @@
                 </p>
                 <p><label>
                     <input type='radio' name='title' value='patron' required>
-                    Patron
+                    Patron (à cocher sinon l'inscription ne se fera...)
                     </label>
                 </p>
                 <p>
@@ -63,7 +63,7 @@
                   <button type="submit">S'inscrire</button>
                   <button type="reset">Réinitialiser</button>
                 </p>
-                <p><div class="retour"><a href="Connexions.html.mako">Retour</a></div></p>
+                <p><div class="retour"><a href="${url_for('connexions')}">Retour</a></div></p>
             </form>
         </section>
       </body>

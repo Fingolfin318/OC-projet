@@ -2,9 +2,9 @@
 <html>
     <head> <meta charset="utf-8">
         <meta name="author" content="Guillaume Kauf">
-        <link rel="stylesheet" href="FlashCareer/static\styleGK.css">
-        <link rel="stylesheet" href="FlashCareer/static\style_gen.css"> 
-        <link rel="icon" href="FlashCareer/images/logo.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="/static/styleGK.css">
+        <link rel="stylesheet" href="/static/style_gen.css"> 
+        <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
         <title>Entreprise</title>
      </head>
      <body>

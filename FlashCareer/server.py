@@ -26,7 +26,7 @@ def load_connected_user():
 def load_type_user():
     user_type = session.get('user_type')
     if user_type is None :
-        user = get_db().execute('select type from users where id = user_id limit 1', (user_type,)).fetchone()
+        user = get_db().execute('select type from users where id = ? limit 1', (user_type,)).fetchone()
         return user
 
 @app.route("/inscription_patrons", methods=["GET", "POST"])
@@ -69,8 +69,8 @@ def register_c():
         finally : 
             db.rollback()
 
-@app.route("/Connexions", methods=["GET", "POST"])
-def Connexions():
+@app.route("/connexions", methods=["GET", "POST"])
+def connexions():
     if "user_id" in session: 
         return redirect(url_for("Accueil.html.mako", error=str('Vous êtes déjà connecté !')))
     if request.method == "GET":
@@ -99,16 +99,13 @@ def index():
 @app.route("/accueil")
 def accueil():
     logged_user = load_connected_user()
-    user_type = load_type_user
+    user_type = load_type_user()
     return render_template("Accueil.html.mako", logged_user=logged_user, user_type=user_type)
 
 @app.route('/a_propos')
 def a_propos() :
     marque = 'Pignouf.exe'
-    return render_template('a_propos.html.mako', marque=marque)
-
-app.run(debug=True)
-
+    return render_template('a_propos.html.mako')
 
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
@@ -125,10 +122,20 @@ def postuler():
 
     return render_template('postuler.html.mako')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+    #app.run(debug=True)
 
-    
+@app.route('/profil')
+def profil() :
+    return render_template('profil.html.mako')
+
+@app.route('/poster_offre')
+def poster_offre() :
+    return render_template('Poster_Offre.html.mako')
+
 @app.route('/contact')
 def contact():
     return render_template('Contact.html.mako')
+
+#RIEN APRÈS CA !!!#
+app.run(debug=True)
