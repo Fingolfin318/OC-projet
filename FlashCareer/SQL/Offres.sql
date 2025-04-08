@@ -1,4 +1,4 @@
-pragma encoding="UTF-8"
+
 --dd--
 create table offres (
     id integer primary key,

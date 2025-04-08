@@ -1,6 +1,6 @@
-pragma encoding="UTF-8"
+
 --dd--
-create table users (
+create table users(
     id integer primary key,
     nom text not null,
     prenom text not null,
@@ -11,3 +11,4 @@ create table users (
     mdp text not null,
     type text not null
 );
+insert into users Values('1', 'cool','cooled', 'm@gmail.com', 'homme', 'Lool', 'santé', 'lavieccool', 'étudiant');

@@ -3,20 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="Michael Ireneo Guillaume" content="FlashCareer">
-    <link rel="stylesheet" type="text/css" href="static/Accueil.css">
-    <link rel="stylesheet" type="text/css" href="static/style_gen.css">
-    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/Accueil.css">
+    <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
     <title>Accueil FlashCareer</title>
 </head>
 <body>
     <div class ="general">
         <div class = "menu">
             <h2>Accueil</h2>
-            <div class="br"><a href="profil.html">Profil</a></div>
-            <div class="br"><a href="postuler.html">Postuler à une offre</a></div>
-            <div class="br"><a href="Offre.html">Poster une offre</a></div>
-            <div class="br"><a href="à_propos.html">A propos du site</a></div>
-            <a href="Connexions.html">Se connecter</a>
+            %if logged_user is None : 
+            <div class="br"><a href="a_propos.html.mako">À propos du site</a></div>
+            <a href="Connexions.html.mako">Se connecter</a>
+            %elif user_type == 'patron' :
+            <div class="br"><a href="profil.html.mako">Profil</a></div>
+            <div class="br"><a href="a_propos.html.mako">A propos du site</a></div>
+            <div class="br"><a href="Offre.html.mako">Poster une offre</a></div>
+            <a href="Connexions.html.mako">Se connecter</a>
+            %elif user_type == 'chercheur' or logged_user.type == 'étudiant' :
+            <div class="br"><a href="profil.html.mako">Profil</a></div>
+            <div class="br"><a href="a_propos.html.mako">A propos du site</a></div>
+            <div class="br"><a href="postuler.html.mako">Postuler à une offre</a></div>
+            <a href="Connexions.html.mako">Se connecter</a>
+            %endif
         </div>
         <div class ="titre-content">
             <div class="titre">
