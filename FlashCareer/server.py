@@ -81,13 +81,13 @@ def connexions():
             cursor = db.execute("select * from users where nom = ? and where prenom = ? limit 1", 
                                 (request.form["nom"], request.form["prénom"], )) 
             user=cursor.fetchone()
-            if user is None :
-                raise ValidationError("nom ou prénom invalide")
+            if user["nom"] or user["prénom"] is None :
+                raise ValidationError("nom ou prénom invalide ou inexistant")
             if user["mdp"] != request.form["mdp"]:
                 raise ValidationError("Mot de passe invalide")
             session.clear()
             session["user_id"] = user["id"]
-            app.loger.info("LOG IN '%s' (id=id)", user['prenom', 'nom'], user['id'])
+            app.logger.info("LOG IN '%s' (id=id)", user['prenom'], user['nom'], user['id'])
             return redirect(url_for("Accueil.html.mako"), code=303)
         except ValidationError as e:
             return render_template("Connexions.html", error=str(e))
