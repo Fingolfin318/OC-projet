@@ -110,46 +110,6 @@ def a_propos() :
 app.run(debug=True)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
     if request.method == 'POST':
