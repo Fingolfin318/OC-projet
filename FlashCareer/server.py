@@ -78,8 +78,8 @@ def connexions():
     elif request.method =="POST":
         db = get_db()
         try:
-            cursor = db.execute("select * from users where nom=? and where prenom=? limit 1", 
-                                (request.form["nom", "prénom"], )) 
+            cursor = db.execute("select * from users where nom = ? and where prenom = ? limit 1", 
+                                (request.form["nom"], request.form["prénom"], )) 
             user=cursor.fetchone()
             if user is None :
                 raise ValidationError("nom ou prénom invalide")
@@ -90,7 +90,7 @@ def connexions():
             app.loger.info("LOG IN '%s' (id=id)", user['prenom', 'nom'], user['id'])
             return redirect(url_for("Accueil.html.mako"), code=303)
         except ValidationError as e:
-            return render_template("login.html.mako", error=str(e))
+            return render_template("Connexions.html", error=str(e))
         
 @app.route('/')
 def index():
