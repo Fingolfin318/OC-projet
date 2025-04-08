@@ -120,10 +120,15 @@ def postuler():
         # Traitement de la postulation (ex: enregistrement, envoi mail, etc.)
         print(f"Nouvelle postulation : {nom} ({email}) - {message}")
 
-        #flash("Votre postulation a bien été envoyée !")
+        #flash("Votre postulation a bien été envoyée")
         return redirect(url_for('postuler'))
 
     return render_template('postuler.html.mako')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    
+@app.route('/contact')
+def contact():
+    return render_template('Contact.html.mako')
