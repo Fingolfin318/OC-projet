@@ -4,14 +4,25 @@
     <meta charset="utf-8">
     <meta name="author" content="Zapoï Piotr">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <title>Contact</title>
+   <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Postuler</title>
 </head>
 <body>
-    <section>
-        <h1><a href="index.html">Retour : </a></h1>
-            <ul>
-                <li>Téléphone : +99 343 555 23 24</li>
-                <li>Mail : <a href="mailto:guillaume.kaufmann@edu.vs.ch">guillaume.kaufmann@edu.vs.ch </a></li>
-            </ul>
-    </section>
+    <h1>Formulaire de postulation</h1>
+    <form action="/postuler" method="post">
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
 </body>
+</html>

@@ -105,3 +105,62 @@ def a_propos() :
     return render_template('a_propos.html.mako', marque=marque)
 
 app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/postuler', methods=['GET', 'POST'])
+def postuler():
+    if request.method == 'POST':
+        nom = request.form.get('nom')
+        email = request.form.get('email')
+        message = request.form.get('message')
+
+        # Traitement de la postulation (ex: enregistrement, envoi mail, etc.)
+        print(f"Nouvelle postulation : {nom} ({email}) - {message}")
+
+        flash("Votre postulation a bien été envoyée !")
+        return redirect(url_for('postuler'))
+
+    return render_template('postuler.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
