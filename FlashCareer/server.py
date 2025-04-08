@@ -14,6 +14,9 @@ app.secret_key = b'\xc4*\xc1P\x01M\xbdo\x92kv\x8a|\xb5\x18q'
 MakoTemplates(app)
 SQLiteExtension(app)
 
+class ValidationError(ValueError):
+    pass
+
 def load_connected_user():
     user_id = session.get('user_id')
     if user_id is None :
@@ -158,7 +161,7 @@ def postuler():
         print(f"Nouvelle postulation : {nom} ({email}) - {message}")
 
         #flash("Votre postulation a bien été envoyée !")
-        return redirect(url_for('postuler.html.mako'))
+        return redirect(url_for('postuler'))
 
     return render_template('postuler.html.mako')
 
