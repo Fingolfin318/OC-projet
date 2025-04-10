@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Zapoï Piotr">
     <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
-    <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+    <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
 </head>
 <body>
     <div class ="general">

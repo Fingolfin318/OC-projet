@@ -5,7 +5,7 @@
            <link rel="stylesheet" href="/static/styleGK.css">
            <link rel="stylesheet" href="/static/style_gen.css">
            <script src="static\PyScript.py"></script>
-           <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+           <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
            <title>Connexions</title>
  </head>
     <body>

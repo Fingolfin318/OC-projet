@@ -31,7 +31,7 @@
         <div class ="titre-content">
             <div class="titre">
                 <h1>FlashCareer</h1>
-                <div class="img_logo"><img src="/images/logo.png" alt="logo" width="270" height="270"></div>
+                <div class="img_logo"><img src="/static/logo.png" alt="logo" width="270" height="270"></div>
             </div>
             <div class = "content">
                 <p>

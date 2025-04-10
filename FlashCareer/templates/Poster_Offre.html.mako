@@ -4,7 +4,7 @@
         <meta name="author" content="Guillaume Kauf">
         <link rel="stylesheet" href="/static/styleGK.css">
         <link rel="stylesheet" href="/static/style_gen.css"> 
-        <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+        <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
         <title>Entreprise</title>
      </head>
      <body>
