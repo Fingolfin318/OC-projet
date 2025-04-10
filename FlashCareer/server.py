@@ -46,8 +46,6 @@ def register_p():
             return redirect(url_for("Accueil.html.mako"), code=303)
         except IntegrityError as e:
             return render_template("Inscription_Chercheur.html.mako", error=str('Valeurs incorrectes'))
-        finally : 
-            db.rollback()
 
 @app.route("/inscription_chercheurs", methods=["GET", "POST"])
 def register_c():
@@ -66,8 +64,6 @@ def register_c():
             return redirect(url_for("Accueil.html.mako"), code=303)
         except IntegrityError as e:
             return render_template("Inscription_Chercheur.html.mako", error=str('Valeurs incorrectes...'))
-        finally : 
-            db.rollback()
 
 @app.route("/connexions", methods=["GET", "POST"])
 def connexions():
@@ -78,10 +74,10 @@ def connexions():
     elif request.method =="POST":
         db = get_db()
         try:
-            cursor = db.execute("select * from users where nom = ? and where prenom = ? limit 1", 
-                                (request.form["nom"], request.form["prénom"], )) 
+            cursor = db.execute("select * from users where nom = ? and where prenom = ? and where mdp = ? limit 1", 
+                                (request.form["nom"], request.form["prenom"], request.form['mdp'], )) 
             user=cursor.fetchone()
-            if user["nom"] or user["prénom"] is None :
+            if user["nom"] or user["prenom"] is None :
                 raise ValidationError("nom ou prénom invalide ou inexistant")
             if user["mdp"] != request.form["mdp"]:
                 raise ValidationError("Mot de passe invalide")

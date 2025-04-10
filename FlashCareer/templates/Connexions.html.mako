@@ -15,16 +15,16 @@
         <section>
             <form action="/signup" method="post">
                 <p>
-                    <label for="Nom">Nom</label>
-                   <input type="text" name="Pseudo" required>
+                    <label for="nom">Nom</label>
+                   <input type="text" name="name" required>
                 </p>
                 <p>
-                    <label for="Prenom">Prénom</label>
-                   <input type="text" name="Pseudo" required>
+                    <label for="prenom">Prénom</label>
+                   <input type="text" name="prenom" required>
                 </p>
                 <p>
-                    <label for="Password">Mot de passe</label>
-                    <input type="text" name="Password" required>
+                    <label for="mdp">Mot de passe</label>
+                    <input type="text" name="mdp" required>
                 </p>
                 <div class="signnincontent_button_link">
                     <p>
