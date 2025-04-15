@@ -24,7 +24,7 @@
                 </p>
                 <p><label>
                     <input type='radio' name='title' value='patron' required>
-                    Patron (à cocher sinon l'inscription ne se fera...)
+                    Patron
                     </label>
                 </p>
                 <p>

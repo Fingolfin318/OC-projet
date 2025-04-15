@@ -20,14 +20,16 @@ class ValidationError(ValueError):
 def load_connected_user():
     user_id = session.get('user_id')
     if user_id is None :
-        user = get_db().execute('select * from users where id = ? limit 1', (user_id,)).fetchone()
-        return user
+        return None
+    user = get_db().execute('select * from users where id = ? limit 1', (user_id,)).fetchone()
+    return user
 
 def load_type_user():
     user_type = session.get('user_type')
     if user_type is None :
-        user = get_db().execute('select type from users where id = ? limit 1', (user_type,)).fetchone()
-        return user
+        return None
+    user = get_db().execute('select type from users where id = ? limit 1', (user_type,)).fetchone()
+    return user['type'] if user else None
 
 @app.route("/inscription_patrons", methods=["GET", "POST"])
 def register_p():
@@ -67,26 +69,26 @@ def register_c():
 
 @app.route("/connexions", methods=["GET", "POST"])
 def connexions():
-    if "user_id" in session: 
-        return redirect(url_for("Accueil.html.mako", error=str('Vous êtes déjà connecté !')))
     if request.method == "GET":
         return render_template("Connexions.html.mako", error=None)
+    if "user_id" in session: 
+        return redirect(url_for("accueil", error=str('Vous êtes déjà connecté !')))
     elif request.method =="POST":
         db = get_db()
         try:
-            cursor = db.execute("select * from users where nom = ? and where prenom = ? and where mdp = ? limit 1", 
+            cursor = db.execute("select * from users where nom = ? and prenom = ? and mdp = ? limit 1", 
                                 (request.form["nom"], request.form["prenom"], request.form['mdp'], )) 
             user=cursor.fetchone()
-            if user["nom"] or user["prenom"] is None :
-                raise ValidationError("nom ou prénom invalide ou inexistant")
+            if not user :
+                raise ValidationError("Nom ou prénom invalide ou inexistant")
             if user["mdp"] != request.form["mdp"]:
                 raise ValidationError("Mot de passe invalide")
             session.clear()
             session["user_id"] = user["id"]
-            app.logger.info("LOG IN '%s' (id=id)", user['prenom'], user['nom'], user['id'])
-            return redirect(url_for("Accueil.html.mako"), code=303)
+            session["user_type"] = user['type']
+            return redirect(url_for("accueil"), code=303)
         except ValidationError as e:
-            return render_template("Connexions.html", error=str(e))
+            return render_template("Connexions.html.mako", error=str(e))
         
 @app.route('/')
 def index():
@@ -117,9 +119,6 @@ def postuler():
         return redirect(url_for('postuler'))
 
     return render_template('postuler.html.mako')
-
-#if __name__ == '__main__':
-    #app.run(debug=True)
 
 @app.route('/profil')
 def profil() :

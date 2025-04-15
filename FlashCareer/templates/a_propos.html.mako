@@ -16,5 +16,6 @@
             'Je lague connard', parfum pour DPS de  et même l'INGSOC ! 
         </p>
     </div>
+    <div class="retour"><a href="${url_for('accueil')}">Retour</a></div>
 </body>
 </html>

@@ -13,10 +13,10 @@
             <h1>Salut, connecte-toi ici : </h1>
         </div>
         <section>
-            <form action="/signup" method="post">
+            <form action="${url_for('connexions')}" method="post">
                 <p>
                     <label for="nom">Nom</label>
-                   <input type="text" name="name" required>
+                   <input type="text" name="nom" required>
                 </p>
                 <p>
                     <label for="prenom">Prénom</label>
