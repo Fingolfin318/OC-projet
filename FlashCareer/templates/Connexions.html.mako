@@ -28,7 +28,7 @@
                 </p>
                 <div class="signnincontent_button_link">
                     <p>
-                        <button class="submit">Se connecter</button>
+                        <button type="submit">Se connecter</button>
                     </p>
                 </div>
             </form>

@@ -11,4 +11,4 @@ create table users(
     mdp text not null,
     type text not null
 );
-insert into users Values('1', 'cool','cooled', 'm@gmail.com', 'homme', 'Lool', 'santé', 'lavieccool', 'étudiant');
+insert into users Values('1', 'cool','cooled', 'm@gmail.com', 'homme', NULL, 'santé', 'lavieccool', 'étudiant');

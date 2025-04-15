@@ -50,7 +50,7 @@
             </p>
             <p>
                 <label>Domaines</label><br>
-                  <select>
+                  <select name='domaine' required>
                     <option>Santé</option>
                     <option>Bâtiment, travaux publics, aménagement et transports</option>
                     <option>Arts, culture, lettres et communication </option>
@@ -64,7 +64,7 @@
             </p>
             <p>
               <label>Mot de passe</label><br>
-              <input type="password" name="mdp" required>
+              <input type="mdp" name="mdp" required>
             <p>
               <button 1 type="submit">S'inscrire</button>
               <button 2 type="reset">Réinitialiser</button>

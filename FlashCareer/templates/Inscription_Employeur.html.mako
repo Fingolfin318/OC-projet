@@ -10,20 +10,18 @@
      <body>
         <div class="title_content"><h1>Voici ton entreprise : </h1></div>
         <section>  
-            <form   action="${url_for('register_p')}" 
-                    method="post"
-                    target="_self">
+            <form   action="${url_for('register_p')}" method="post">
                 <p> <label>
-                    <input type="radio" name="title" value="mr" required>
+                    <input type="radio" name="genre" value="mr" required>
                     Mr
                     </label>
                     <label>
-                    <input type="radio" name="title" value="mme" required>
+                    <input type="radio" name="genre" value="mme" required>
                     Mme
                     </label>
                 </p>
                 <p><label>
-                    <input type='radio' name='title' value='patron' required>
+                    <input type='radio' name='type' value='patron' required>
                     Patron
                     </label>
                 </p>
@@ -33,7 +31,7 @@
                 </p>
                 <p>
                     <label>Prénom</label><br>
-                    <input type="text" name="prénom" required>
+                    <input type="text" name="prenom" required>
                 </p>
                 <p>
                     <label>Email</label><br>
@@ -44,7 +42,8 @@
                 </p>
                 <p>
                     <label>Domaines</label><br>
-                        <select required>
+                        <select name='domaine' required>
+                            <option></option>
                             <option>Santé</option>
                             <option>Bâtiment, travaux publics, aménagement et transports</option>
                             <option>Arts, culture, lettres et communication </option>
@@ -58,7 +57,7 @@
                 </p> 
                 <p>
                   <label>Mot de passe</label><br>
-                  <input type="password" name="mot_de_passe" required>
+                  <input type="password" name="mdp" required>
                 <p>
                   <button type="submit">S'inscrire</button>
                   <button type="reset">Réinitialiser</button>
