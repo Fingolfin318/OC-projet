@@ -10,7 +10,7 @@
      <body>
         <div class="title_content"><h1>Voici ton entreprise : </h1></div>
         <section>  
-            <form   action="/signin" 
+            <form   action="${url_for('register_p')}" 
                     method="post"
                     target="_self">
                 <p> <label>

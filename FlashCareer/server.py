@@ -6,7 +6,7 @@ from datetime import datetime
 from flask_mako import render_template, MakoTemplates
 from flask_sqlite import SQLiteExtension, sqlite3, get_db
 from random import randint
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for, session
 from sqlite3 import IntegrityError
 ##
 app = Flask("flashcareer") 
@@ -19,9 +19,10 @@ class ValidationError(ValueError):
 
 def load_connected_user():
     user_id = session.get('user_id')
+    user_nom = session.get('user_nom')
     if user_id is None :
         return None
-    user = get_db().execute('select * from users where id = ? limit 1', (user_id,)).fetchone()
+    user = get_db().execute('select * from users where id = ? and nom = ? limit 1', (user_id, user_nom)).fetchone()
     return user
 
 def load_type_user():
@@ -45,7 +46,7 @@ def register_p():
                 """,
                 (request.form["genre"],request.form["type"], request.form["nom"],request.form["prénom"],request.form["email"],request.form['entreprise'],request.form["domaine"],request.form["mdp"]))
             db.commit()
-            return redirect(url_for("Accueil.html.mako"), code=303)
+            return redirect(url_for("accueil"), code=303)
         except IntegrityError as e:
             return render_template("Inscription_Chercheur.html.mako", error=str('Valeurs incorrectes'))
 
@@ -86,7 +87,7 @@ def connexions():
             session.clear()
             session["user_id"] = user["id"]
             session["user_type"] = user['type']
-            return redirect(url_for("accueil"), code=303)
+            return redirect(url_for("accueil"), code=303, nom=session.get('nom'))
         except ValidationError as e:
             return render_template("Connexions.html.mako", error=str(e))
         

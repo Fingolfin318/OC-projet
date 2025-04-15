@@ -9,7 +9,7 @@
      </head>
  <body>
     <section>
-      <form action="/signin" 
+      <form action="${url_for('register_c')}" 
               method="post"
               target="_self">
             <p>
@@ -42,7 +42,7 @@
             </p>
             <p>
               <label>Prénom</label><br>
-              <input type="text" name="prénom" required>
+              <input type="text" name="prenom" required>
             </p>
             <p>
               <label>Email</label><br>
@@ -64,7 +64,7 @@
             </p>
             <p>
               <label>Mot de passe</label><br>
-              <input type="password" name="mot_de_passe" required>
+              <input type="password" name="mdp" required>
             <p>
               <button 1 type="submit">S'inscrire</button>
               <button 2 type="reset">Réinitialiser</button>
