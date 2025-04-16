@@ -16,12 +16,22 @@
         <section class="retour-accueil text-center">
             <button class="connexion"><a href="${url_for('connexions')}">Veuillez vous connectez !</a></button>
     %elif logged_user is not None :
-        <section class="profile-info text-center">
-            <h2>Prénom : ${prenom}</h2>
-            <h2>Nom : ${nom}</h2>
-            <h2>Status : ${type}</h2>
-            <h2>Domaine : ${domaine}</h2>
-        </section>
+        %if user_type == 'patron' :
+            <section class="profile-info text-center">
+                <h2>Prénom : ${prenom}</h2>
+                <h2>Nom : ${nom}</h2>
+                <h2>Status : ${type}</h2>
+                <h2>Domaine : ${domaine}</h2>
+                <h2>Entreprise : ${entreprise}</h2>
+            </section>
+        %else :
+            <section class="profile-info text-center">
+                <h2>Prénom : ${prenom}</h2>
+                <h2>Nom : ${nom}</h2>
+                <h2>Status : ${type}</h2>
+                <h2>Domaine : ${domaine}</h2>
+            </section>
+        %endif
     %endif
     </main>
     <footer>

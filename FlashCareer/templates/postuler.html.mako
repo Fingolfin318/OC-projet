@@ -38,5 +38,5 @@
                 </div>
             </div>
     </div>
-    <a href="Accueil.html">ACCUEIL</a>
+    <a href="${url_for('accueil')}">Accueil</a>
 </body>

@@ -7,29 +7,29 @@
     <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
     <link rel="icon" type="image/x-icon" href="/static/logo.png">
     <link rel="icon" type="image/x-icon" href="/static/logo.jpg">
-    <title>Accueil FlashCareer</title>
+    <title>Accueil : FlashCareer</title>
 </head>
 <body>
     <div class="general">
         <div class="menu">
             <h2>Accueil</h2>
 
-            % if nom is None:  
+            %if nom is None:  
                 <div class="br"><a href="${url_for('a_propos')}">À propos du site</a></div>
                 <a href="${url_for('connexions')}">Se connecter</a>
-            % else:  
-                % if user_type == 'patron':
+            %else:  
+                %if user_type == 'patron':
                     <div class="br"><a href="${url_for('profil')}">Profil</a></div>
                     <div class="br"><a href="${url_for('a_propos')}">À propos du site</a></div>
                     <div class="br"><a href="${url_for('poster_offre')}">Poster une offre</a></div>
-                    <a href="${url_for('connexions')}">Se déconnecter</a>
-                % elif user_type == 'chercheur' or user_type == 'étudiant':
+                    <a href="${url_for('deconnexions')}">Se déconnecter</a>
+                %elif user_type == 'chercheur' or user_type == 'étudiant':
                     <div class="br"><a href="${url_for('profil')}">Profil</a></div>
                     <div class="br"><a href="${url_for('a_propos')}">À propos du site</a></div>
                     <div class="br"><a href="${url_for('postuler')}">Postuler à une offre</a></div>
-                    <a href="${url_for('connexions')}">Se déconnecter</a>
-                % endif
-            % endif
+                    <a href="${url_for('deconnexions')}">Se déconnecter</a>
+                %endif
+            %endif
         </div>
         <div class="titre-content">
             <div class="titre">
@@ -40,7 +40,7 @@
                 % if nom is None:
                     <p>Bienvenue sur FlashCareer ! 💼🚀</p>
                 % else:
-                    <p>Bienvenue ${nom} sur FlashCareer ! 💼🚀</p>
+                    <p>${message}Bienvenue ${nom} sur FlashCareer ! 💼🚀</p>
                 % endif
                 Trouve le job de tes rêves sur le seul site d'offre d'emplois efficaces et plus passionnant que rester devant son écran béatement.
                 <br><br>
