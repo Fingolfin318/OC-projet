@@ -6,7 +6,7 @@ create table offres (
     domaine text not null,
     duration text not null,
     created_at text not null,
-    patron_emailtext not null,
+    patron_email text not null,
     forma_needed text not null
 );
 --dd--

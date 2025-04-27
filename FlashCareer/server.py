@@ -131,8 +131,22 @@ def deconnexions():
 
 @app.route('/poster_offre')
 def poster_offre() :
-    return render_template('Poster_Offre.html.mako')
-
+    if request.method == "GET":
+        return render_template('poster_Offre.html.mako')
+    elif request.method == "POST":
+        db = get_db()
+        try:
+            db.execute(
+                """
+                INSERT INTO users (patron_entreprise, domaine, duration, created_at, patron_email, forma_needed)
+                VALUES (?, ?, ?, ?, ?, ?);
+                """,
+                (request.form["patron_entreprise"], request.form["domaine"], request.form["duration"], request.form["created_at"], None, request.form["patron_email"], request.form["forma_needed"], ))
+            db.commit()
+            session['message'] = 'Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... '
+        except IntegrityError as e:
+            return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
+        return redirect(url_for("accueil"))
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
     if request.method == 'POST':
