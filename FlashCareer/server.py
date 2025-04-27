@@ -138,7 +138,7 @@ def poster_offre() :
         try:
             db.execute(
                 """
-                INSERT INTO users (patron_entreprise, domaine, duration, created_at, patron_email, forma_needed)
+                INSERT INTO offres (patron_entreprise, domaine, duration, created_at, patron_email, forma_needed)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """,
                 (request.form["patron_entreprise"], request.form["domaine"], request.form["duration"], request.form["created_at"], None, request.form["patron_email"], request.form["forma_needed"], ))
