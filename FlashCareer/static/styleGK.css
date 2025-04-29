@@ -85,6 +85,10 @@ a {
     align-items: center;
     margin-left: 700px;
     margin-right: 450px;
+    display: flex;
+    justify-c100vht: center;
+    align-items: center;     
+    height: 100vh;
 }
 
 .retour:hover{background-color: rgb(80, 126, 202);}
