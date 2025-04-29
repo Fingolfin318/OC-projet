@@ -7,8 +7,13 @@
 </head>
 <body>
     <div class ="general">
+    <header class ="entete">
+             <a href="${ url_for('accueil') }">
+            <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+        </a>
             <h2>À Propos</h2>
             <h1>Voici quelques infos utiles sur ce site :</h1>
+            </header>
         </div>
     <div class = "content">
         <p>Hey, ce super site vous permet de postuler à des offres d'emplois ou de poster des offres, de la manière la plus aisée du monde ! 
@@ -16,10 +21,6 @@
             'Je lague connard', parfum pour DPS de  et même l'INGSOC ! 
         </p>
     </div>
-    <footer>
-        <section class="retour-accueil text-center">
-            <button class="retour"><a href="${url_for('accueil')}">Accueil</a></button>
-        </section>
-    </footer>
+
 </body>
 </html>

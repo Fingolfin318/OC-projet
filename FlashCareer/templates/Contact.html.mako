@@ -8,7 +8,11 @@
 </head>
 <body>
     <section>
-        <h1><a href="${url_for('accueil')}">Retour : </a></h1>
+        <header class ="entete">
+            <a href="${ url_for('accueil') }">
+                <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+            </a>
+        </header>
             <ul>
                 <li>Téléphone : +99 343 555 23 24</li>
                 <li>Mail : <a href="mailto:guillaume.kaufmann@edu.vs.ch">guillaume.kaufmann@edu.vs.ch </a></li>
