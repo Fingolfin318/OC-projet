@@ -1,14 +1,15 @@
-
+drop table if EXISTS offres;
 --dd--
 create table offres (
     id integer primary key,
     patron_entreprise text not null,
     domaine text not null,
     duration text not null,
-    created_at text not null,
+    type_searched text not null,
     patron_email text not null,
     forma_needed text not null
 );
+drop table if exists postulations;
 --dd--
 create table postulations (
     id integer primary key,
