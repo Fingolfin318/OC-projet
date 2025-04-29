@@ -11,6 +11,11 @@
     <title>Postuler</title>
 </head>
 <body>
+    <header class ="entete">
+        <a href="${ url_for('accueil') }">
+            <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+        </a>
+    </header>
     <h1>Formulaire de postulation</h1>
     <form action="/postuler" method="post">
         <label for="nom">Nom :</label><br>

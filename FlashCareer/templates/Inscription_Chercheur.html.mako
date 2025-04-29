@@ -12,6 +12,10 @@
       <form action="${url_for('register_c')}" 
               method="post"
               target="_self">
+          <header class ="entete">
+            <a href="${ url_for('accueil') }">
+              <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+            </a>
             <p>
               <label>
               <input type="radio" name="genre" value="mr" required>
@@ -26,6 +30,7 @@
                 Hélicoptère de combat
               </label>
             </p>
+          </header>
             <p>
               <label>
                 <input type= "radio" name="type" value="étudiant" required>

@@ -8,16 +8,16 @@
 <body>
     <div class ="general">
     <header class ="entete">
-             <a href="${ url_for('accueil') }">
-            <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+        <a href="${ url_for('accueil') }" >
+            <img src="${ url_for('static', filename='logo.png') }" class="logo" alt="Accueil" style="height: 150px;">
         </a>
-            <h2>À Propos</h2>
-            <h1>Voici quelques infos utiles sur ce site :</h1>
-            </header>
+        <h2>À Propos</h2>
+        <h1>Voici quelques infos utiles sur ce site :</h1>
+    </header>
         </div>
     <div class = "content">
         <p>Hey, ce super site vous permet de postuler à des offres d'emplois ou de poster des offres, de la manière la plus aisée du monde ! 
-            Notre avantage principal ? Notre visibilité, notre renommé ! Nous avons l'immense privilège de mêm être soutenu financièrement par quelques sponsors : 
+            Notre avantage principal ? Notre visibilité, notre renommée ! Nous avons l'immense privilège de même être soutenu financièrement par quelques sponsors : 
             'Je lague connard', parfum pour DPS de  et même l'INGSOC ! 
         </p>
     </div>

@@ -8,7 +8,14 @@
         <title>Entreprise</title>
      </head>
      <body>
-        <div class="title_content"><h1>Voici ton ofrre de poste : </h1></div>
+        <div class="title_content">
+            <header class ="entete">
+                <a href="${ url_for('accueil') }">
+                    <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 100px;">
+                </a>
+            </header>
+            <h1>Voici ton offre de poste : </h1>
+        </div>
         <section>  
             <form   action="/signin" 
                     method="post"

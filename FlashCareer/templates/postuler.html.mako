@@ -11,7 +11,12 @@
 <body>
     <div class="general">
         <div class="titre">
-            <h1>Offres :</h1>
+            <header class ="entete">
+                    <a href="${ url_for('accueil') }" class ="entete">
+                        <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 200px;">
+                    </a>
+                    <h1>Offres :</h1>
+            </header>
         </div>
             <div class="offres">
                 <div class="informaticien">

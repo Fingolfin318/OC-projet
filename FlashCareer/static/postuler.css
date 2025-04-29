@@ -5,22 +5,23 @@ h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     background-color:  rgb(49, 136, 187);
-    margin-top: 0px;
+    margin-top: 40px;
     border: 4px solid black;
     border-radius: 10px;
 }
+
 
 a {
     color: black;
     background-color: rgb(174, 183, 188);
     border: 3px solid black;
-    margin-top: 60px;
+    margin-top: 50px;
     display: inline-block;
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
     align-items: center;
-    margin-left: 700px;
+    margin-left: 600px;
     margin-right: 450px;
 }
 
@@ -74,6 +75,21 @@ a:hover{background-color: rgb(80, 126, 202); padding: 14px 25px; border-color: w
     height: auto;
 }
 
+.entete {
+    display: flex;
+    align-items: left; /* aligne verticalement le texte et l'image */
+    justify-content: left;     /* centre le bloc horizontalement */
+    gap: 20px; /* espace entre le logo et le texte */
+    padding: 10px;
+    border: none;
+    background-color: lightskyblue;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    box-sizing: border-radius;
+}
+.entete:hover {background-color: lightskyblue; padding: 10px;}
+.entete:active {background-color: lightskyblue;}
 
 button {
     padding: 10px 20px;
