@@ -31,6 +31,7 @@ button {
 }
 .submit, .signincontent_button_link {
     background-color: rgb(49, 136, 187);
+    align-items: center;
 }
 button:hover{background-color: rgb(80, 126, 202); padding: 4px 8px;
 }

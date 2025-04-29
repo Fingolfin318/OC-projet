@@ -138,15 +138,16 @@ def poster_offre() :
         try:
             db.execute(
                 """
-                INSERT INTO offres (patron_entreprise, domaine, duration, created_at, patron_email, forma_needed)
+                INSERT INTO offres (patron_entreprise, patron_email, type_searched, domaine, duration, forma_needed)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """,
-                (request.form["patron_entreprise"], request.form["domaine"], request.form["duration"], request.form["created_at"], None, request.form["patron_email"], request.form["forma_needed"], ))
+                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], None, request.form["duration"], request.form["forma_needed"], ))
             db.commit()
             session['message'] = 'Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... '
         except IntegrityError as e:
             return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
+
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
     if request.method == 'POST':

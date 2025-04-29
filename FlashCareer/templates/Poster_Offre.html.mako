@@ -15,19 +15,19 @@
                     target="_self">
                 <p>
                     <label>Entreprise</label><br>
-                    <input type="text" name="nom" required>
+                    <input type="text" name="patron_entreprise" required>
                 </p>
                 <p>
                     <label>Email</label><br>
-                    <input type="email" name="email" required>
+                    <input type="email" name="patron_email" required>
                 </p>
                 <p>
                     <label>Type(s) recherché(s)</label><br>
-                    <input type="text" name="compétences" required>
+                    <input type="text" name="type_searched" required>
                 </p>
                 <p>
                     <label>Domaines</label><br>
-                        <select>
+                        <select name='domaine'>
                             <option>Santé</option>
                             <option>Bâtiment, travaux publics, aménagement et transports</option>
                             <option>Arts, culture, lettres et communication </option>
@@ -41,11 +41,11 @@
                 </p>
                 <p>
                     <label>Durée du contrat</label><br>
-                    <input type="text" name="durée_contrat" required>
+                    <input type="text" name="duration" required>
                 </p>
                 <p>
                   <label>Formation(s) nécessaire(s)</label><br>
-                  <input type="text" name="formations_et_anciens_métiers" required>
+                  <input type="text" name="forma_needed" required>
                 </p>
                 <p>
                   <button type="submit">Poster</button>
