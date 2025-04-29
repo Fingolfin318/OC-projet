@@ -2,3 +2,10 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     background-color: lightskyblue; 
 }
+
+.entete {
+    display: flex;
+    align-items: center; /* aligne verticalement le texte et l'image */
+    gap: 20px; /* espace entre le logo et le texte */
+    padding: 10px;
+}

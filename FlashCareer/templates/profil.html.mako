@@ -8,7 +8,10 @@
 </head>
 
 <body>
-    <header>
+    <header class ="entete">
+        <a href="${ url_for('accueil') }">
+            <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
+        </a>
         <h1>Profil :</h1>
     </header>
     <main>

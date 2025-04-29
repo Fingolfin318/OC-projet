@@ -10,7 +10,12 @@
  </head>
     <body>
         <div class="title_content">
+            <header class ="entete">
+                <a href="${ url_for('accueil') }">
+                    <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 100px;">
+                </a>
             <h1>Salut, connecte-toi ici : </h1>
+            </header>
         </div>
         <section>
             <form action="${url_for('connexions')}" method="post">
