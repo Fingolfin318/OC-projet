@@ -129,7 +129,7 @@ def deconnexions():
    session.clear()
    return redirect(url_for('accueil', code=303))
 
-@app.route('/poster_offre')
+@app.route('/poster_offre', methods=["GET", "POST"])
 def poster_offre() :
     if request.method == "GET":
         return render_template('poster_Offre.html.mako')

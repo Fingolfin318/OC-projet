@@ -17,7 +17,7 @@
             <h1>Voici ton offre de poste : </h1>
         </div>
         <section>  
-            <form   action="/signin" 
+            <form   action="${url_for('poster_offre')}" 
                     method="post"
                     target="_self">
                 <p>

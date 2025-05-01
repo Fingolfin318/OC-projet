@@ -83,8 +83,9 @@ a {
     border-radius: 20px;
     text-decoration: none;
     align-items: center;
-    margin-left: 700px;
-    margin-right: 450px;
+    margin-right: 46.3%;
+    margin-left: 46%;
+    display: flex;
 }
 
 .retour:hover{background-color: rgb(80, 126, 202);}
