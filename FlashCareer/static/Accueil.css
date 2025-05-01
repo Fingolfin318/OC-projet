@@ -12,6 +12,11 @@ h1 {
     background-color: rgb(49, 136, 187);
     margin-left: 25px;
     margin-right: 35px;
+    border: 2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;    
+
 }
 
 .content, .titre{
@@ -25,8 +30,12 @@ h1 {
     align-items: center;
     justify-content: center;
     background-color:  rgb(49, 136, 187);
-    margin-left: -50px;
+    margin-left: -37px;
     margin-top: 0px;
+    border: 2px solid;
+    border-left: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;  
 }
 .img_logo{
     animation-iteration-count: infinite;
