@@ -19,28 +19,20 @@
             </header>
         </div>
             <div class="offres">
-                <div class="informaticien">
-                   <div class="img_job"><img class="img-informaticien" src="images/informaticien.png" alt="informaticien" width="100" height="75"></div>
-                    Informaticien :
-                    <ul>
-                        <li>Mr. Shrek</li>
-                        <li>savoir manger des cartes graphiques tout les midis 🤓 👨‍💻</li>
-                        <li>contrat : 100 ans</li>
-                        <li>étudiant avec expérience dans le domaine</li>
-                    </ul>
-                    <button>postuler</button>
-                </div>
-                <div class="boucher">
-                    <div class="img_job"><img class="img-boucher" src="images/boucher.png" alt="boucher" width="70" height="100"></div>
-                    Boucher :
-                    <ul>
-                        <li>Jeafrey Dammer</li>
-                        <li>savoir couper toutes sortes de viandes 🔪🙍</li>
-                        <li>contrat : perpétuité</li>
-                        <li>diplômé</li>
-                    </ul>
-                    <button>postuler</button>
-                </div>
+                % for offre in offres :
+                    ${offre['patron_email']}
+                % endfor
+                
+                %for i in l_offres :
+                    <div class=offre>
+                    Type demandé : ${type_searched}
+                    Domaine : ${domaine}
+                    Formations nécessaires : ${forma_needed}
+                    Pour l'entreprise : ${patron_entreprise}
+                    Durée : ${duration}
+                    Email de l'entreprise : ${patron_email}
+                    Offre crée le : ${creation_time}
+
             </div>
     </div>
     <a href="${url_for('accueil')}">Accueil</a>
