@@ -150,17 +150,8 @@ def poster_offre() :
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
     db = get_db()
-    nb_offres = len(db.execute("select id from offres").fetchall())
-    offre = []
-    for i in range(nb_offres) :
-        offre.append(i[db.execute("select * from offres where id = ?", (i, ))])
-    forma_needed = i[6]
-    pat_email = i[5]
-    type_s = i[4]
-    dur = i[3]
-    dom = i[2]
-    pat_ent = i[1]
-    return render_template('postuler.html.mako', patron_entreprise=pat_ent, domaine=dom, duration=dur, type_searched=type_s, patron_email=pat_email, forma_needed=forma_needed)
+    offres = [db.execute('select * from offres')]
+    return render_template('postuler.html.mako')
 
 
 #RIEN APRÈS CA !!!#

@@ -18,22 +18,17 @@
                     <h1>Offres :</h1>
             </header>
         </div>
-            <div class="offres">
-                % for offre in offres :
-                    ${offre['patron_email']}
-                % endfor
-                
-                %for i in l_offres :
-                    <div class=offre>
-                    Type demandé : ${type_searched}
-                    Domaine : ${domaine}
-                    Formations nécessaires : ${forma_needed}
-                    Pour l'entreprise : ${patron_entreprise}
-                    Durée : ${duration}
-                    Email de l'entreprise : ${patron_email}
-                    Offre crée le : ${creation_time}
-
-            </div>
+        <div class="offres">
+            % for offre in offres :
+                Type demandé : ${offre['type_searched']}
+                Domaine : ${offre['domaine']}
+                Formations nécessaires : ${offre['patron_email']}
+                Pour l'entreprise : ${offre['patron_entreprise']}
+                Durée : ${offre['duration']}
+                Email de l'entreprise : ${offre['patron_email']}
+                Offre crée le : ${offre['created_at']}
+            % endfor
+        </div>
     </div>
     <a href="${url_for('accueil')}">Accueil</a>
 </body>
