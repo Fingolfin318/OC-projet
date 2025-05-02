@@ -10,7 +10,7 @@
      <body>
         <div class="title_content">
             <header class ="entete">
-                <a href="${ url_for('accueil') }">
+                <a href="${ url_for('accueil') }" class ="logo-lien">
                     <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 100px;">
                 </a>
             </header>
