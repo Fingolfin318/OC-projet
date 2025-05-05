@@ -16,7 +16,6 @@ class ValidationError(ValueError):
     pass
 
 
-
 @app.route('/')
 def index():
     return redirect(url_for("accueil"), code=303)
@@ -47,7 +46,7 @@ def profil() :
     user_domaine = session['domaine']
     user_entreprise = session['entreprise']
     print(user_entreprise)
-    return render_template('profil.html.mako', nom=user_nom, prenom=user_prenom, type=user_type, domaine=user_domaine, entreprise=user_entreprise)
+    return render_template('profil.html.mako', nom=user_nom, prenom=user_prenom, user_type=user_type, domaine=user_domaine, entreprise=user_entreprise)
 
 @app.route('/contact')
 def contact():
@@ -141,7 +140,7 @@ def poster_offre() :
                 INSERT INTO offres (patron_entreprise, patron_email, type_searched, domaine, duration, forma_needed)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """,
-                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], None, request.form["duration"], request.form["forma_needed"], ))
+                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], request.form["duration"], request.form["forma_needed"], ))
             db.commit()
             session['message'] = 'Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... '
         except IntegrityError as e:
@@ -150,17 +149,8 @@ def poster_offre() :
 
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
-    if request.method == 'POST':
-        nom = request.form.get('nom')
-        email = request.form.get('email')
-        message = request.form.get('message')
-
-        
-        print(f"Nouvelle postulation : {nom} ({email}) - {message}")
-
-        
-        return redirect(url_for('postuler'))
-
+    db = get_db()
+    offres = [db.execute('select * from offres')]
     return render_template('postuler.html.mako')
 
 
