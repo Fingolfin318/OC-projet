@@ -1,9 +1,21 @@
 h1 { 
-    color: blue; 
+    color: black; 
     display: flex;
     align-items: center;
     justify-content: center;
-} 
+    gap: 20px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
 h3 {
     display: flex;
     align-items: center;
@@ -89,3 +101,17 @@ a {
 }
 
 .retour:hover{background-color: rgb(80, 126, 202);}
+
+.entete {
+    display: flex;
+    align-items: center; /* aligne verticalement le texte et l'image */
+    justify-content: center;     /* centre le bloc horizontalement */
+    gap: 20px; /* espace entre le logo et le texte */
+    padding: 10px;
+    margin-top: 30px;
+}
+
+body { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: lightskyblue; 
+}

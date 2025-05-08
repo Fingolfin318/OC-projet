@@ -20,3 +20,5 @@ create table postulations (
     texte_motiv text not null,
     offre_key integer
 );
+
+insert into offres (patron_entreprise, domaine, duration, type_searched, patron_email, forma_needed) VALUES(c, c, c, c, c, c)
