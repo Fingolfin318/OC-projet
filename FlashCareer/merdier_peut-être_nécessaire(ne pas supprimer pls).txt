@@ -8,3 +8,4 @@
         offre['forma_needed'] = offres[i[5]]
 
 , offre['patron_entreprise']=offre['patron_entreprise'], offre['domaine']=offre['domaine'], offre['duration']=offre['duration'], offre['type_searched']=offre['type_searched'], offre['patron_email']=offre['patron_email'], offre['forma_needed']=offre['forma_needed']
+Offre crée le : ${offre['created_at']}
