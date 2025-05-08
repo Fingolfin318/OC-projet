@@ -58,6 +58,17 @@ def register_p():
         return render_template("inscription_Employeur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        nom = request.form["nom"]
+        prenom = request.form["prenom"]
+        utilisateur_existant = db.execute(
+            """
+            SELECT * FROM users WHERE nom = ? AND prenom = ?
+            """,
+            (nom, prenom)
+        ).fetchone()
+
+        if utilisateur_existant:
+            return render_template("inscription_patron.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
         try:
             db.execute(
                 """
@@ -147,17 +158,11 @@ def poster_offre() :
             return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
 
-@app.route('/page_offres', methods=['GET', 'POST'])
-def page_offres():
+@app.route('/postuler', methods=['GET', 'POST'])
+def postuler():
     db = get_db()
     offres = db.execute('select * from offres').fetchall()
     return render_template('page_offres.html.mako', offres=offres)
-
-@app.route('/postuler', methods=['GET', 'POST'])
-def postuler():
-    
-    return render_template('postuler_formulaire.html.mako')
-
 
 
 #RIEN APRÈS CA !!!#
