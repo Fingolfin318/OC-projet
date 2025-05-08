@@ -155,6 +155,7 @@ def page_offres():
 
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
+    
     return render_template('postuler_formulaire.html.mako')
 
 
