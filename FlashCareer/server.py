@@ -147,11 +147,16 @@ def poster_offre() :
             return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
 
+@app.route('/page_offres', methods=['GET', 'POST'])
+def page_offres():
+    db = get_db()
+    offres = [db.execute('select * from offres').fetchall()]
+    return render_template('page_offres.html.mako')
+
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
-    db = get_db()
-    offres = [db.execute('select * from offres')]
-    return render_template('postuler.html.mako')
+    return render_template('postuler_formulaire.html-mako')
+
 
 
 #RIEN APRÈS CA !!!#

@@ -26,7 +26,7 @@
                 %elif user_type == 'chercheur' or user_type == 'étudiant':
                     <div class="br"><a href="${url_for('profil')}">Profil</a></div>
                     <div class="br"><a href="${url_for('a_propos')}">À propos du site</a></div>
-                    <div class="br"><a href="${url_for('postuler')}">Postuler à une offre</a></div>
+                    <div class="br"><a href="${url_for('page_offres')}">Voir les offres</a></div>
                     <a href="${url_for('deconnexions')}">Se déconnecter</a>
                 %endif
             %endif
