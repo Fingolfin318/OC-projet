@@ -150,12 +150,12 @@ def poster_offre() :
 @app.route('/page_offres', methods=['GET', 'POST'])
 def page_offres():
     db = get_db()
-    offres = [db.execute('select * from offres').fetchall()]
-    return render_template('page_offres.html.mako')
+    offres = db.execute('select * from offres').fetchall()
+    return render_template('page_offres.html.mako', offres=offres)
 
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
-    return render_template('postuler_formulaire.html-mako')
+    return render_template('postuler_formulaire.html.mako')
 
 
 
