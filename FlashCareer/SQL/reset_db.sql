@@ -19,8 +19,7 @@ create table postulations (
     chercheur_prénom text not null,
     CV text not null,
     chercheur_email text not null,
-    texte_motiv text not null,
-    offre_key integer
+    texte_motiv text not null
 );
 --dd--
 create table users(
