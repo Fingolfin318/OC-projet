@@ -68,7 +68,7 @@ def register_p():
         ).fetchone()
 
         if utilisateur_existant:
-            return render_template("inscription_patron.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
+            return render_template("inscription_Employeur.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
         try:
             db.execute(
                 """
