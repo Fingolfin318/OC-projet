@@ -92,6 +92,17 @@ def register_c():
         return render_template("inscription_Chercheur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        nom = request.form["nom"]
+        prenom = request.form["prenom"]
+        utilisateur_existant = db.execute(
+            """
+            SELECT * FROM users WHERE nom = ? AND prenom = ?
+            """,
+            (nom, prenom)
+        ).fetchone()
+
+        if utilisateur_existant:
+            return render_template("inscription_Chercheur.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
         try:
             db.execute(
                 """
