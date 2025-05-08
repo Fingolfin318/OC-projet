@@ -26,7 +26,6 @@
                 Pour l'entreprise : ${offre['patron_entreprise']}
                 Durée : ${offre['duration']}
                 Email de l'entreprise : ${offre['patron_email']}
-                Offre crée le : ${offre['created_at']}
                 <a href="${url_for('postuler')}">Postuler</a>
             % endfor
         </div>
