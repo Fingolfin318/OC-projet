@@ -58,6 +58,12 @@ def register_p():
         return render_template("inscription_Employeur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        utilisateur_existant = db.execute(
+            """SELECT * FROM users WHERE nom = ? AND prenom = ?""",
+            (request.form["nom"], request.form["prenom"])).fetchone()
+
+        if utilisateur_existant:
+            return render_template("inscription_Employeur.html.mako", e=str("Un utilisateur avec ce nom et prénom existe déjà."))
         try:
             db.execute(
                 """
@@ -72,7 +78,7 @@ def register_p():
             session["prenom"] = request.form["prenom"]
             session['message'] = 'Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... '
         except IntegrityError as e:
-            return render_template("inscription_Chercheur.html.mako", error=str('Valeurs incorrectes'))
+            return render_template("inscription_Chercheur.html.mako", e=str('Valeurs incorrectes'))
         return redirect(url_for("accueil"))
 
 @app.route("/inscription_chercheurs", methods=["GET", "POST"])
@@ -81,6 +87,11 @@ def register_c():
         return render_template("inscription_Chercheur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        utilisateur_existant = db.execute(
+            """SELECT * FROM users WHERE nom = ? AND prenom = ?""",
+            (request.form["nom"], request.form["prenom"])).fetchone()
+        if utilisateur_existant:
+            return render_template("inscription_Chercheur.html.mako", e=str("Un utilisateur avec ce nom et prénom existe déjà."))
         try:
             db.execute(
                 """
@@ -94,7 +105,7 @@ def register_c():
             session["prenom"] = request.form["prenom"]
             session['message'] = 'Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... '
         except IntegrityError as e:
-            return render_template("inscription_Chercheur.html.mako", error=str('Valeurs incorrectes...'))
+            return render_template("inscription_Chercheur.html.mako", e=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
 
 @app.route("/connexions", methods=["GET", "POST"])
@@ -119,9 +130,9 @@ def connexions():
                 session['message'] = 'Connexion réussie ! Explorez Explorez les possibilitées sans fin de Flashcareer... '
                 return redirect(url_for("accueil"))
             else:
-                return render_template("connexions.html.mako", error="Identifiants incorrects.")
+                return render_template("connexions.html.mako", e="Identifiants incorrects.")
         except Exception as e:
-            return render_template("connexions.html.mako", error=str(e))
+            return render_template("connexions.html.mako", e=str(e))
         
 @app.route('/deconnexions')
 def deconnexions():
@@ -144,7 +155,7 @@ def poster_offre() :
             db.commit()
             session['message'] = 'Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... '
         except IntegrityError as e:
-            return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
+            return render_template('poster_Offre.html.mako', e=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
 
 @app.route('/page_offres', methods=['GET', 'POST'])
