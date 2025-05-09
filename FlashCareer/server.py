@@ -169,21 +169,20 @@ def postuler():
     if request.method == "GET":
         return render_template('postuler_formulaire.html.mako')
     elif request.method == "POST":
-        nom = request.form['nom']
-        email = request.form['email']
-        message = request.form['message']
         db = get_db()
         try:
             db.execute(
                 """
-                INSERT INTO postulation (nom, email, message)
-                VALUES (?, ?, ?);
+                INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_key)
+                VALUES (?, ?, ?, ?, ?, ?);
                 """,
-                (nom, email, message)
+                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], 7)
             )
             db.commit()
             session['message'] = 'Postulation réussie !'
-    return render_template('postuler_formulaire.html.mako')
+        except IntegrityError as e:
+            return render_template('poster_formulaire.html.mako', e=str('Format incorecte'))
+        return redirect(url_for('accueil'))
 
 
 
