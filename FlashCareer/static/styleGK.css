@@ -53,6 +53,10 @@ a:active{
 a:hover{
     background-color: rgb(80, 126, 202);
 }
+a.logo-lien:hover {
+    background-color: transparent;
+    padding: 0px;
+}
 body {
     font-size: x-large;
 }
