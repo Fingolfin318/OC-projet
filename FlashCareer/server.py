@@ -58,17 +58,6 @@ def register_p():
         return render_template("inscription_Employeur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
-        nom = request.form["nom"]
-        prenom = request.form["prenom"]
-        utilisateur_existant = db.execute(
-            """
-            SELECT * FROM users WHERE nom = ? AND prenom = ?
-            """,
-            (nom, prenom)
-        ).fetchone()
-
-        if utilisateur_existant:
-            return render_template("inscription_Employeur.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
         try:
             db.execute(
                 """
@@ -92,17 +81,6 @@ def register_c():
         return render_template("inscription_Chercheur.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
-        nom = request.form["nom"]
-        prenom = request.form["prenom"]
-        utilisateur_existant = db.execute(
-            """
-            SELECT * FROM users WHERE nom = ? AND prenom = ?
-            """,
-            (nom, prenom)
-        ).fetchone()
-
-        if utilisateur_existant:
-            return render_template("inscription_Chercheur.html.mako", error="Un utilisateur avec ce nom et prénom existe déjà.")
         try:
             db.execute(
                 """
@@ -177,7 +155,26 @@ def page_offres():
 
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
+    if request.method == "GET":
+        return render_template('postuler_formulaire.html.mako')
+    elif request.method == "POST":
+        nom = request.form['nom']
+        email = request.form['email']
+        message = request.form['message']
+        db = get_db()
+        try:
+            db.execute(
+                """
+                INSERT INTO postulation (nom, email, message)
+                VALUES (?, ?, ?);
+                """,
+                (nom, email, message)
+            )
+            db.commit()
+            session['message'] = 'Postulation réussie !'
     return render_template('postuler_formulaire.html.mako')
+
+
 
 #RIEN APRÈS CA !!!#
 app.run(debug=True)
