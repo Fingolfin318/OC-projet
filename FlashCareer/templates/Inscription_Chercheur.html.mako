@@ -8,6 +8,9 @@
         <title>CV</title>
      </head>
  <body>
+% if error:
+    <div class="error">Un utilisateur avec ce nom et prénom existe déjà.</div>
+% endif
     <section>
       <form action="${url_for('register_c')}" 
               method="post"

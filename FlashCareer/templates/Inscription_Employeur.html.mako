@@ -6,8 +6,11 @@
         <link rel="stylesheet" href="/static/style_gen.css"> 
         <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
         <title>Entreprise</title>
-     </head>
-     <body>
+    </head>
+    <body>
+    % if error:
+    <div class="error">Un utilisateur avec ce nom et prénom existe déjà.</div>
+    % endif
         <div class="title_content">
             <header class ="entete">
                 <a href="${ url_for('accueil') }" class ="logo-lien">
