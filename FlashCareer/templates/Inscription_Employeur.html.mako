@@ -9,7 +9,7 @@
     </head>
     <body>
     % if error:
-    <div class="error">Un utilisateur avec ce nom et prénom existe déjà.</div>
+    <div class="error">${error}</div>
     % endif
         <div class="title_content">
             <header class ="entete">

@@ -7,7 +7,8 @@ create table offres (
     duration text not null,
     type_searched text not null,
     patron_email text not null,
-    forma_needed text not null
+    forma_needed text not null,
+    offre_id not null;
 );
 drop table if exists postulations;
 --dd--
