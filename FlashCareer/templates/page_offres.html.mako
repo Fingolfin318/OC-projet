@@ -20,7 +20,7 @@
         </div>
         <div class="offres">
             % for offre in offres :
-                <div class="type">Type demandé : ${offre['type_searched']}<button class="redirection"><a href="${url_for('postuler')}">Postuler</a></div></div>
+                <div class="type">Type demandé : ${offre['type_searched']}<button class="redirection"><a href="${url_for('postuler')}">Postuler à l'offre ${offre['id']}</a></div></div>
                 <li>Domaine : ${offre['domaine']}</li>
                 <li>Formations nécessaires : ${offre['patron_email']}</li>
                 <li>Pour l'entreprise : ${offre['patron_entreprise']}</li>
