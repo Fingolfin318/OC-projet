@@ -20,7 +20,7 @@
     <br>
     <br>
     <div class="liste">
-        <form action="/postuler" method="post">
+        <form action="/postuler/<id>" method="post">
             <label for="nom">Nom :</label><br>
             <input type="text" id="nom" name="nom" required><br><br>
 

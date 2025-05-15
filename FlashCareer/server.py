@@ -187,12 +187,11 @@ def postuler(id):
                 INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """,
-                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], id)
-            )
+                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], id))
             db.commit()
             session['message'] = 'Postulation réussie !'
         except IntegrityError as e:
-            return render_template('poster_formulaire.html.mako', e=str('Format incorecte'))
+            return render_template('postuler_formulaire.html.mako', e=str('Format incorecte'))
         return redirect(url_for('accueil'))
 
 
