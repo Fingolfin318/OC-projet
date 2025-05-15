@@ -15,6 +15,9 @@
         <a href="${ url_for('accueil') }">
             <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
         </a>
+        % if error:
+            <div class="error">${error}</div>
+        % endif
     </header>
     <h1>Formulaire de postulation</h1>
     <br>
