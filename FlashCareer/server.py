@@ -184,6 +184,7 @@ def postuler(id):
         if request.form['prénom'] != session["prenom"] or request.form['nom'] != session["nom"] :
             return render_template('postuler_formulaire.html.mako', error=str('Nom ou prénom incorect'))
         else : 
+            error=None
             try:
                 db.execute(
                     """
@@ -194,7 +195,7 @@ def postuler(id):
                 db.commit()
                 session['message'] = 'Postulation réussie !'
             except IntegrityError as e:
-                return render_template('postuler_formulaire.html.mako', e=str('Format incorecte'))
+                return render_template('postuler_formulaire.html.mako', error=str('Format incorecte'))
             return redirect(url_for('accueil'))
 
 
