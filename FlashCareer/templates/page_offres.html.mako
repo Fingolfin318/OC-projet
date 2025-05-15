@@ -5,6 +5,7 @@
     <meta name="Michael Ireneo Guillaume" content="FlashCareer">
     <link rel="stylesheet" type="text/css" href="/static/postuler.css">
     <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
+    <link rel="stylesheet" type="text/css" href="/static/page_offres.css">
     <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
     <title>Offres</title>
 </head>
@@ -20,14 +21,20 @@
         </div>
         <div class="offres">
             % for offre in offres :
-                <div class="type">Type demandé : ${offre['type_searched']}<button class="redirection"><a href="${url_for('postuler', id=offre['id'])}">Postuler à l'offre</a></div></div>
-                <li>Domaine : ${offre['domaine']}</li>
-                <li>Formations nécessaires : ${offre['patron_email']}</li>
-                <li>Pour l'entreprise : ${offre['patron_entreprise']}</li>
-                <li>Durée : ${offre['duration']}</li>
-                <li>Email de l'entreprise : ${offre['patron_email']}</li>
+                Type demandé : ${offre['type_searched']}<br><br>
+                <div class="liste">
+                    <li>Domaine : ${offre['domaine']}</li>
+                    <li>Formations nécessaires : ${offre['patron_email']}</li>
+                    <li>Pour l'entreprise : ${offre['patron_entreprise']}</li>
+                    <li>Durée : ${offre['duration']}</li>
+                    <li>Email de l'entreprise : ${offre['patron_email']}</li>
+                </div>
+                <div class="postuler">
+                <a href="${url_for('postuler', id=offre['id'])}">Postuler à l'offre</a>
+                </div>
             % endfor
         </div>
     </div>
+    <br><br><br><br>
     <a href="${url_for('accueil')}">Accueil</a>
 </body>
