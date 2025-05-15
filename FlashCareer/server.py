@@ -181,19 +181,22 @@ def postuler():
         return render_template('postuler_formulaire.html.mako')
     elif request.method == "POST":
         db = get_db()
-        try:
-            db.execute(
-                """
-                INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
-                VALUES (?, ?, ?, ?, ?, ?);
-                """,
-                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], session['offre'])
-            )
-            db.commit()
-            session['message'] = 'Postulation réussie !'
-        except IntegrityError as e:
-            return render_template('poster_formulaire.html.mako', e=str('Format incorecte'))
-        return redirect(url_for('accueil'))
+        if request.form['prénom'] != session["prenom"] or request.form['nom'] != session["nom"] :
+            return render_template('postuler_formulaire.html.mako', error=str('Nom ou prénom incorect'))
+        else : 
+            error=None
+            try:
+                db.execute(
+                    """
+                    INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
+                    VALUES (?, ?, ?, ?, ?, ?);
+                    """,
+                    (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], id))
+                db.commit()
+                session['message'] = 'Postulation réussie !'
+            except IntegrityError as e:
+                return render_template('postuler_formulaire.html.mako', error=str('Format incorecte'))
+            return redirect(url_for('accueil'))
 
 @app.route('/offre/<id>')
 def offre(id):
