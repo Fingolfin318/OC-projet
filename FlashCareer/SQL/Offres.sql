@@ -18,7 +18,7 @@ create table postulations (
     CV text not null,
     chercheur_email text not null,
     texte_motiv text not null,
-    offre_id integer
+    offre_id integer not null
 );
 
-insert into offres (patron_entreprise, domaine, duration, type_searched, patron_email, forma_needed) VALUES(c, c, c, c, c, c)
+insert into offres values (0, 'co', 'coo', 'col', 'cool', 'cl', 'cll');
