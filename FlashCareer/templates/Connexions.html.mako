@@ -8,6 +8,9 @@
            <title>Connexions</title>
  </head>
     <body>
+    % if error:
+    <div class="error">${error}</div>
+    % endif
         <div class="title_content">
             <header class ="entete">
                 <a href="${ url_for('accueil') }" class="logo-lien">

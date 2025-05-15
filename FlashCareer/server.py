@@ -118,6 +118,13 @@ def connexions():
         return render_template("connexions.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        mdp_incorrect = db.execute(
+            """SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp != ?""",
+            (request.form["nom"], request.form["prenom"], request.form["mdp"])).fetchone()
+
+        if mdp_incorrect:
+            error = str("Mot de passe incorrect")
+            return render_template("connexions.html.mako", error=error)
         try:
             cursor = db.execute(
                 "SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp = ? LIMIT 1",
