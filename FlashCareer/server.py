@@ -63,7 +63,8 @@ def register_p():
             (request.form["nom"], request.form["prenom"])).fetchone()
 
         if utilisateur_existant:
-            return render_template("inscription_Employeur.html.mako", e=str("Un utilisateur avec ce nom et prénom existe déjà."))
+            error = str("Un utilisateur avec ce nom et prénom existe déjà.")
+            return render_template("inscription_Employeur.html.mako", error=error)
         try:
             db.execute(
                 """
@@ -78,7 +79,8 @@ def register_p():
             session["prenom"] = request.form["prenom"]
             session['message'] = 'Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... '
         except IntegrityError as e:
-            return render_template("inscription_Chercheur.html.mako", e=str('Valeurs incorrectes'))
+            error=str('Valeurs incorrectes')
+            return render_template("inscription_Chercheur.html.mako", error=error)
         return redirect(url_for("accueil"))
 
 @app.route("/inscription_chercheurs", methods=["GET", "POST"])
@@ -91,7 +93,8 @@ def register_c():
             """SELECT * FROM users WHERE nom = ? AND prenom = ?""",
             (request.form["nom"], request.form["prenom"])).fetchone()
         if utilisateur_existant:
-            return render_template("inscription_Chercheur.html.mako", e=str("Un utilisateur avec ce nom et prénom existe déjà."))
+            error = str("Un utilisateur avec ce nom et prénom existe déjà.")
+            return render_template("inscription_Chercheur.html.mako", error=error)
         try:
             db.execute(
                 """
@@ -105,7 +108,8 @@ def register_c():
             session["prenom"] = request.form["prenom"]
             session['message'] = 'Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... '
         except IntegrityError as e:
-            return render_template("inscription_Chercheur.html.mako", e=str('Valeurs incorrectes...'))
+            error = str('Valeurs incorrectes...')
+            return render_template("inscription_Chercheur.html.mako", error=error)
         return redirect(url_for("accueil"))
 
 @app.route("/connexions", methods=["GET", "POST"])

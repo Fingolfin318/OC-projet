@@ -119,3 +119,13 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     background-color: lightskyblue; 
 }
+.error {
+    text-align: center;
+    background-color: #ffe0e0;
+    color: #a80000;
+    border: 1px solid #ff6b6b;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
