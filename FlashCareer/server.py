@@ -118,6 +118,13 @@ def connexions():
         return render_template("connexions.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
+        mdp_incorrect = db.execute(
+            """SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp != ?""",
+            (request.form["nom"], request.form["prenom"], request.form["mdp"])).fetchone()
+
+        if mdp_incorrect:
+            error = str("Mot de passe incorrect")
+            return render_template("connexions.html.mako", error=error)
         try:
             cursor = db.execute(
                 "SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp = ? LIMIT 1",
@@ -166,6 +173,7 @@ def poster_offre() :
 def page_offres():
     db = get_db()
     offres = db.execute('select * from offres').fetchall()
+    session['offre'] = offre['id']
     return render_template('page_offres.html.mako', offres=offres)
 
 @app.route('/postuler', methods=['GET', 'POST'])
@@ -177,10 +185,10 @@ def postuler():
         try:
             db.execute(
                 """
-                INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_key)
+                INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """,
-                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], 7)
+                (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], session['offre'])
             )
             db.commit()
             session['message'] = 'Postulation réussie !'
