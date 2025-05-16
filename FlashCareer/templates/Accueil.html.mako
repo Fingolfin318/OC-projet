@@ -40,7 +40,11 @@
                 % if nom is None:
                     <p>Bienvenue sur FlashCareer ! 💼🚀</p>
                 % else:
+                    %if message :
                     <p>${message}Bienvenue ${nom} sur FlashCareer ! 💼🚀</p>
+                    %else:
+                    <p>Bienvenue ${nom} sur FlashCareer ! 💼🚀</p>
+                    %endif
                 % endif
                 Trouve le job de tes rêves sur le seul site d'offre d'emplois efficaces et plus passionnant que rester devant son écran béatement.
                 <br><br>
