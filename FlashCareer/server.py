@@ -180,8 +180,8 @@ def page_offres():
     offres = db.execute('select * from offres').fetchall()
     return render_template('page_offres.html.mako', offres=offres)
 
-@app.route('/postuler/<id>', methods=['GET', 'POST'])
-def postuler(id):
+@app.route('/postuler', methods=['GET', 'POST'])
+def postuler():
     if request.method == "GET":
         return render_template('postuler_formulaire.html.mako')
     elif request.method == "POST":
@@ -203,7 +203,14 @@ def postuler(id):
                 return render_template('postuler_formulaire.html.mako', error=error)
             return redirect(url_for('accueil', message=session['message']))
 
-
+@app.route('/offre/<id>')
+def offre(id):
+    db = get_db
+    offres = db.execute('select * from offres').fetchall()
+    return render_template('offre.html.mako', id=id)
+#if offre[id] :
+# forma_needed : ${offre[forma_neede]}
+# ...#
 
 #RIEN APRÈS CA !!!#
 app.run(debug=True)
