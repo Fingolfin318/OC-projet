@@ -18,7 +18,7 @@
     %if logged_user is None :
         <section class="retour-accueil text-center">
             <button class="connexion"><a href="${url_for('connexions')}">Veuillez vous connectez !</a></button>
-    %elif logged_user is not None :
+    %else :
         <section class="profile-info text-center">
             <h2>Prénom : ${prenom}</h2>
             <h2>Nom : ${nom}</h2>

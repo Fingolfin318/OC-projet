@@ -11,14 +11,13 @@
 <body>
     <div class="titre">
         <header class ="entete">
-            <a href="${ url_for('accueil') }" class ="entete">
-                <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 200px;">
+            <a href="${url_for('accueil')}" class ="entete">
+                <img src="${url_for('static', filename='logo.png')}" alt="Accueil" style="height: 200px;">
             </a>
-            <h1>Offres :</h1>
+            <h1>Voici le détail de l'offre en question :</h1>
         </header>
     </div>
     <div>
-            % if offre[id] :
-            forma_needed : ${offre[forma_neede]}
-            % endif
+        Domaines : ${offre['domaine']}
+        Formations nécessaires : ${offre['forma_needed']}
     </div>
