@@ -5,22 +5,18 @@ from flask import Flask,request, redirect, url_for, session
 from flask_mako import render_template, MakoTemplates
 from flask_sqlite import SQLiteExtension, sqlite3, get_db
 from sqlite3 import IntegrityError
-from time import sleep
 ##
 app = Flask("flashcareer") 
-app.secret_key = '122334455667788990' 
+app.secret_key = os.urandom(16) 
 MakoTemplates(app)
 SQLiteExtension(app)
 
 class ValidationError(ValueError):
     pass
 
-message=None
-
 @app.route('/')
 def index():
-    global message
-    return redirect(url_for("accueil", message=message), code=303)
+    return redirect(url_for("accueil"), code=303)
 
 @app.route("/accueil")
 def accueil():
@@ -42,7 +38,7 @@ def a_propos() :
 def profil() :
     if "nom" not in session:
         logged_user=None
-        return redirect(url_for("accueil", message=message), code=303)
+        return redirect(url_for("accueil"), code=303)
     else :
         logged_user = session['l_u']
         user_nom = session["nom"]
@@ -81,6 +77,9 @@ def register_p():
             session["user_type"] = request.form["type"]
             session["nom"] = request.form["nom"]
             session["prenom"] = request.form["prenom"]
+            session['l_u'] = 1
+            session['domaine'] = request.form['domaine']
+            session['entreprise'] = request.form['entreprise']
             session['message'] = 'Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... '
         except IntegrityError as e:
             error=str('Valeurs incorrectes')
@@ -110,6 +109,8 @@ def register_c():
             session["user_type"] = request.form["type"]
             session["nom"] = request.form["nom"]
             session["prenom"] = request.form["prenom"]
+            session['domaine'] = request.form['domaine']
+            session['l_u'] = 1
             session['message'] = str('Inscription réussie ! Explorez les possibilitées sans fin de Flashcareer... ')
         except IntegrityError as e:
             error = str('Valeurs incorrectes...')
@@ -122,13 +123,6 @@ def connexions():
         return render_template("connexions.html.mako", error=None)
     elif request.method == "POST":
         db = get_db()
-        mdp_incorrect = db.execute(
-            """SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp != ?""",
-            (request.form["nom"], request.form["prenom"], request.form["mdp"])).fetchone()
-
-        if mdp_incorrect:
-            error = str("Mot de passe incorrect")
-            return render_template("connexions.html.mako", error=error)
         try:
             cursor = db.execute(
                 "SELECT * FROM users WHERE nom = ? AND prenom = ? AND mdp = ? LIMIT 1",
@@ -146,7 +140,7 @@ def connexions():
                 session['message'] = 'Connexion réussie ! Explorez les possibilitées sans fin de Flashcareer... '
                 return redirect(url_for("accueil", message=session['message']))
             else:
-                return render_template("connexions.html.mako", e="Identifiants incorrects.")
+                return render_template("connexions.html.mako", error="Identifiants incorrects.")
         except Exception as e:
             return render_template("connexions.html.mako", error=str(e))
         
@@ -165,14 +159,14 @@ def poster_offre() :
         try:
             db.execute(
                 """
-                INSERT INTO offres (patron_entreprise, patron_email, type_searched, domaine, duration, forma_needed)
-                VALUES (?, ?, ?, ?, ?, ?);
+                INSERT INTO offres (patron_entreprise, patron_email, type_searched, domaine, duration, forma_needed, detail, nom_travail)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?);
                 """,
-                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], request.form["duration"], request.form["forma_needed"], ))
+                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], request.form["duration"], request.form["forma_needed"], request.form['detail'], request.form['nom_trav']))
             db.commit()
             session['message'] = str('Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... ')
         except IntegrityError as e:
-            return render_template('poster_Offre.html.mako', e=str('Valeurs incorrectes...'))
+            return render_template('poster_Offre.html.mako', error=str('Valeurs incorrectes...'))
         return redirect(url_for("accueil"))
 
 @app.route('/page_offres', methods=['GET', 'POST'])
@@ -184,14 +178,12 @@ def page_offres():
 @app.route('/postuler', methods=['GET', 'POST'])
 def postuler():
     if request.method == "GET":
-        return render_template('postuler_formulaire.html.mako')
+        return render_template('postuler_formulaire.html.mako', error=None)
     elif request.method == "POST":
         db = get_db()
         if request.form['prénom'] != session["prenom"] or request.form['nom'] != session["nom"] :
-            error = str('Nom ou prénom incorect')
-            return render_template('postuler_formulaire.html.mako', error=error)
+            return render_template('postuler_formulaire.html.mako', error=str('Nom ou prénom incorect'))
         else : 
-            error=None
             try:
                 db.execute(
                     """INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
@@ -200,8 +192,7 @@ def postuler():
                 db.commit()
                 session['message'] = str('Postulation réussie !')
             except IntegrityError :
-                error = str('Format incorecte')
-                return render_template('postuler_formulaire.html.mako', error=error)
+                return render_template('postuler_formulaire.html.mako', e=str('Format incorect'))
             return redirect(url_for('accueil'))
 
 @app.route('/offre/<id>')
@@ -209,5 +200,10 @@ def offre(id):
     offre = get_db().execute('select * from offres where id = ?', id).fetchone()
     return render_template('offre.html.mako', offre=offre,)
 
+@app.route('/postulations')
+def postulations():
+    user_nom = session["nom"]
+    postulations = get_db().execute('select * from postulations where offre_patr_nom = ?', (user_nom)).fetchall()
+    return render_template('postulations.html.mako', postulations=postulations)
 #RIEN APRÈS CA !!!#
 app.run(debug=True)

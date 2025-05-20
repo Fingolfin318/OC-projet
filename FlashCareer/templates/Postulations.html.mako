@@ -16,18 +16,18 @@
             <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
         </a>
     </header>
-    <h1>Formulaire de postulation</h1>
-    <form action="/postuler" method="post">
-        <label for="nom">Nom :</label><br>
-        <input type="text" id="nom" name="nom" required><br><br>
-
-        <label for="email">Email :</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="message">Message :</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
-
-        <input type="submit" value="Envoyer">
-    </form>
+    <h1>Postulations pour vos offres :<h1>
+    <div class="offres">
+            % for postulation in postulations :
+                Pour l'offre : ${postulation['offre_nom']}<br><br>
+                <div class="liste">
+                    <li>Nom du postulant : ${offre['domaine']}</li>
+                    <li>Prénom du postulant : ${offre['forma_needed']}</li>
+                    <li>Formation(s) du postulant : ${offre['patron_entreprise']}</li>
+                    <li>Texte de motivation : ${offre['duration']}</li>
+                    <li>Email du postulant : ${offre['patron_email']}</li>
+                </div>
+            % endfor
+    </div>
 </body>
 </html>

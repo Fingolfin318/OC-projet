@@ -20,5 +20,6 @@
     <div>
         <li>Domaines : ${offre['domaine']}</li>
         <li>Formations nécessaires : ${offre['forma_needed']}</li>
+        <button><a href="${url_for('postuler')}">Postuler</a></button>
         <button><a href="${url_for('page_offres')}">Retour sur la page des offres</a></button>
     </div>
