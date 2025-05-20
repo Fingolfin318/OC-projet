@@ -26,3 +26,6 @@ On peut postuler à des offres que le patron/employeur a poster.
 Cette offre indique le domaine, l'entreprise, l'email de l'entreprise pour prendre contact si jamais, la formation nécéssaire, la durée du contrat et numéro de l'offre.
 On peut également revenir sur la page d'acceuil en cliquant sur le logo de FlashCareer.
 On peut se déconnecter via un bouton sur la page d'acceuil.
+
+PROCÉDURE :
+Allez sur serveur.py, sur le bouton pour run le script appuyez et, sous vos yeux ébahis, le site pendra vie.
