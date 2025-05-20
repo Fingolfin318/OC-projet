@@ -20,38 +20,21 @@
             </header>
         </div>
         <div class="offres">
-            % for offre in offres :
-                <h2>
-                    <li>${offre['nom_trav']}</li>
-                </h2>
-                <div class="liste">
-                    <p>
-                        <li>Domaine : ${offre['domaine']}</li>
-                    </p>
-                    <p>
-                        <li>profil recherché : ${offre['type_searched']}</li>
-                    </p>
-                    <p>
-                        <li>Formations nécessaires : ${offre['forma_needed']}</li>
-                    </p>
-                    <p>
-                        <li>Pour l'entreprise : ${offre['patron_entreprise']}</li>
-                    </p>
-                    <p>
-                        <li>Durée : ${offre['duration']}</li>
-                    </p>
-                    <p>
-                        <li>Email de l'entreprise : ${offre['patron_email']}</li>
-                    </p>
-                    <p>
-                        <li>Numéro de l'offre : ${offre['id']}
-                    </p>
-                    <li class="postuler">
-                        <a href="${url_for('offre', id=offre['id'])}">Postuler à l'offre</a>
-                    </li>
+            % for offre in offres:
+            <div class="offre-card">
+                <h2>${offre['nom_trav']}</h2>
+                <ul class="liste">
+                    <li><strong>Domaine :</strong> ${offre['domaine']}</li>
+                    <li><strong>Profil recherché :</strong> ${offre['type_searched']}</li>
+                    <li><strong>Formations nécessaires :</strong> ${offre['forma_needed']}</li>
+                    <li><strong>Entreprise :</strong> ${offre['patron_entreprise']}</li>
+                    <li><strong>Durée :</strong> ${offre['duration']}</li>
+                    <li><strong>Email :</strong> ${offre['patron_email']}</li>
+                    <li><strong>Numéro de l'offre :</strong> ${offre['id']}</li>
+                </ul>
+                <div class="postuler">
+                    <a href="${url_for('offre', id=offre['id'])}">Postuler</a>
                 </div>
+            </div>
             % endfor
         </div>
-    </div>
-    <br><br><br><br>
-</body>
