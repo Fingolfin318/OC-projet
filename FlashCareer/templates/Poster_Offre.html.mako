@@ -23,6 +23,10 @@
                     method="post"
                     target="_self">
                 <p>
+                    <label>Nom de l'emploi</label><br>
+                    <input type='text' name='trav_nom' required>
+                </p>
+                <p>
                     <label>Entreprise</label><br>
                     <input type="text" name="patron_entreprise" required>
                 </p>
@@ -55,6 +59,10 @@
                 <p>
                   <label>Formation(s) nécessaire(s)</label><br>
                   <input type="text" name="forma_needed" required>
+                </p>
+                <p>
+                    <label>Détail du travail :</label><br>
+                    <input type='text' name='detail' required>
                 </p>
                 <p>
                   <button type="submit">Poster</button>
