@@ -6,7 +6,7 @@ Description du projet :
 OBJECTIF DU PROJET :
 Ce site est un site d'offre d'emploi sur lequelle on peut s'inscrire en tant que chercheur d'emploi/étudiant ou en tant qu'employeur.
 Si on cherche un emploi, il faudra remplir un CV qui sera retenu en envoyer quand il va postuler à une offre.
-Si on est employeur, on a la possibilité de poster une offre d'emploie qui sera mise en ligne sur laquelle un chercheur d'emploi/étudiant peut postuler.
+Si on est employeur, on a la possibilité de poster une offre d'emploi qui sera mise en ligne sur laquelle un chercheur d'emploi/étudiant peut postuler.
 
 DIFFERENTE PAGES DU PROJET :
 La première page web est la page d'accueil qui comporte une description briève et humoristique du site, avec différents boutons qui renvoient aux différentes pages du site : Profil, Postuler à une offre, Poster une offre, A propos du site, Se connecter.
