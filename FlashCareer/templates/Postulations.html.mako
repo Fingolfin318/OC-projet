@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Zapoï Piotr">
-    <link rel="stylesheet" type="text/css" href="/static/ire.css">
+    <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
+    <link rel="stylesheet" type="text/css" href="/static/page_offres.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
    <!DOCTYPE html>
 <html lang="fr">
