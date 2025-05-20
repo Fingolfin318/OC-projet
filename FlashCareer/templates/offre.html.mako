@@ -26,7 +26,7 @@
         <li><strong>Email :</strong> ${offre['patron_email']}</li>
         <li><strong>Numéro de l'offre :</strong> ${offre['id']}</li>
         <div class=boutonnn>
-        <button><a class = boutonnn href="${url_for('postuler')}">Postuler</a></button>
+        <button><a class = boutonnn href="${url_for('postuler', id=offre['id'])}">Postuler</a></button>
         <button><a href="${url_for('page_offres')}">Retour sur la page des offres</a></button>
         </div>
     </div>
