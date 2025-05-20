@@ -10,11 +10,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Postuler</title>
+    <title>Postulations</title>
 </head>
 <body>
     <header class ="entete">
-        <a href="${ url_for('accueil') }">
+        <a class="logo-lien" href="${ url_for('accueil') }">
             <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
         </a>
         <h1>Postulations pour vos offres :<h1>
