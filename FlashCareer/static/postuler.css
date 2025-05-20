@@ -24,17 +24,6 @@ a {
     margin-left: 600px;
     margin-right: 450px;
 }
-.boutonnn {
-    border: 3px solid black;
-    margin-top: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    align-items: center;
-    margin-left: 600px;
-    margin-right: 450px;
-}
 
 a:active{background-color: rgb(0, 94, 255)m;}
 a:hover{background-color: rgb(80, 126, 202); padding: 14px 25px; border-color: white; color: white;}
@@ -49,48 +38,18 @@ a:hover{background-color: rgb(80, 126, 202); padding: 14px 25px; border-color: w
    gap: 120px;
 }
 
-.img-informaticien {
-    width: 100px;
-    height: auto; 
-}
 
-.boucher {
-    border: 4px solid black;
-    padding: 20px;
-    margin: 30px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 120px;
- 
- }
 
  .img-boucher {
     width: 100px;
     height: auto; 
 }
 
- .chomeur {
-    border: 4px solid black;
-    padding: 20px;
-    margin: 30px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 120px;
- 
- }
-
- .img-chomeur {
-    width: 100px;
-    height: auto;
-}
-
 .entete {
     display: flex;
-    align-items: left; /* aligne verticalement le texte et l'image */
-    justify-content: left;     /* centre le bloc horizontalement */
-    gap: 20px; /* espace entre le logo et le texte */
+    align-items: left;
+    justify-content: left;
+    gap: 20px;
     padding: 10px;
     border: none;
     background-color: lightskyblue;
@@ -105,9 +64,10 @@ a:hover{background-color: rgb(80, 126, 202); padding: 14px 25px; border-color: w
 button {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: aliceblue;
+    background-color: transparent;
     color: black;
     border-radius: 30px;
+    border: none;
 }
  
 button:hover{background-color:rgb(80, 126, 202); padding: 14px 25px; border-color: white; color: white;}

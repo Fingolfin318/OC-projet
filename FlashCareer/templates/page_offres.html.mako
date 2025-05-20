@@ -31,10 +31,11 @@
                     <li><strong>Durée :</strong> ${offre['duration']}</li>
                     <li><strong>Email :</strong> ${offre['patron_email']}</li>
                     <li><strong>Numéro de l'offre :</strong> ${offre['id']}</li>
-                </ul>
+
                 <div class="postuler">
                     <a href="${url_for('offre', id=offre['id'])}">Postuler</a>
                 </div>
+                </ul>
             </div>
             % endfor
         </div>
