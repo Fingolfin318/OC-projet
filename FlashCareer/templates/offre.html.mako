@@ -14,10 +14,11 @@
             <a href="${url_for('accueil')}" class ="entete">
                 <img src="${url_for('static', filename='logo.png')}" alt="Accueil" style="height: 200px;">
             </a>
-            <h1>Voici le détail de l'offre en question :</h1>
+            <h2>${offre['detail']} :</h2>
         </header>
     </div>
     <div>
-        Domaines : ${offre['domaine']}
-        Formations nécessaires : ${offre['forma_needed']}
+        <li>Domaines : ${offre['domaine']}</li>
+        <li>Formations nécessaires : ${offre['forma_needed']}</li>
+        <button><a href="${url_for('page_offres')}">Retour sur la page des offres</a></button>
     </div>
