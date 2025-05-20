@@ -29,7 +29,7 @@
                     <input type="email" name="patron_email" required>
                 </p>
                 <p>
-                    <label>Type(s) recherché(s)</label><br>
+                    <label>Profil(s) recherché(s)</label><br>
                     <input type="text" name="type_searched" required>
                 </p>
                 <p>
