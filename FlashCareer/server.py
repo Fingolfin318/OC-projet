@@ -162,7 +162,7 @@ def poster_offre() :
                 INSERT INTO offres (patron_entreprise, patron_email, type_searched, domaine, duration, forma_needed, detail, nom_trav)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?);
                 """,
-                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], request.form["duration"], request.form["forma_needed"], request.form['detail'], request.form['nom_trav']))
+                (request.form["patron_entreprise"], request.form["patron_email"], request.form["type_searched"], request.form["domaine"], request.form["duration"], request.form["forma_needed"], request.form['detail'], request.form['nom_trav'],))
             db.commit()
             session['message'] = str('Création réussie ! Regardez bien vos mails, au cas où une personne aurait déjà répondu, qui sait... ')
         except IntegrityError as e:

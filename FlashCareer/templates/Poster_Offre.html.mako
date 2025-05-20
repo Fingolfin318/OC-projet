@@ -24,7 +24,7 @@
                     target="_self">
                 <p>
                     <label>Nom de l'emploi</label><br>
-                    <input type='text' name='trav_nom' required>
+                    <input type='text' name='nom_trav' required>
                 </p>
                 <p>
                     <label>Entreprise</label><br>
