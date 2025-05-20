@@ -29,16 +29,13 @@
                     <li>Durée : ${offre['duration']}</li>
                     <li>Email de l'entreprise : ${offre['patron_email']}</li>
                     <li>Numéro de l'offre : ${offre['id']}
-<<<<<<< HEAD
                     <li class="postuler">
                     <a href="${url_for('offre', id=offre['id'])}">Postuler à l'offre</a>
                     </li>
-=======
                     <li>Détail : ${offre['detail']}</li>
                 </div>
                 <div class="postuler">
                 <a href="${url_for('offre', id=offre['id'])}">Postuler à l'offre</a>
->>>>>>> 91a438abc12a8abbe55346af6f4a505b23301a00
                 </div>
             % endfor
         </div>
