@@ -70,8 +70,6 @@ button {
     border: none;
 }
  
-button:hover{background-color:rgb(80, 126, 202); padding: 14px 25px; border-color: white; color: white;}
-button:active{background-color: rgb(0, 94, 255);}
 
 .type {
     margin-left: 100px;
