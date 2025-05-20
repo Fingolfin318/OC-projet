@@ -7,7 +7,8 @@ create table offres (
     duration text not null,
     type_searched text not null,
     patron_email text not null,
-    forma_needed text not null
+    forma_needed text not null,
+    detail text not null
 );
 drop table if exists postulations;
 --dd--
@@ -21,4 +22,4 @@ create table postulations (
     offre_id integer not null
 );
 
-insert into offres values (0, 'co', 'coo', 'col', 'cool', 'cl', 'cll');
+insert into offres values (0, 'co', 'coo', 'col', 'cool', 'cl', 'cll', 'cours dappui après 1600');

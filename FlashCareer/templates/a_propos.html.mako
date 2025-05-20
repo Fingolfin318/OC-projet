@@ -18,7 +18,7 @@
     <div class = "content">
         <p>Hey, ce super site vous permet de postuler à des offres d'emplois ou de poster des offres, de la manière la plus aisée du monde ! 
             Notre avantage principal ? Notre visibilité, notre renommée ! Nous avons l'immense privilège de même être soutenu financièrement par quelques sponsors : 
-            'Je lague connard', parfum pour DPS de  et même l'INGSOC ! 
+            'Je lague connard', parfum pour DPS de RAGEQUIT SAUVAGE, Captaine Nord VPN et même l'INGSOC ! 
         </p>
     </div>
 
