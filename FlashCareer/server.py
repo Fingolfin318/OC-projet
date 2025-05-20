@@ -200,7 +200,7 @@ def postuler():
                 db.commit()
                 session['message'] = str('Postulation réussie !')
             except IntegrityError :
-                error = str('Format incorecte')
+                error = str('Format incorrect')
                 return render_template('postuler_formulaire.html.mako', error=error)
             return redirect(url_for('accueil'))
 
