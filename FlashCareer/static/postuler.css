@@ -71,8 +71,6 @@ button {
 }
  
 
-button:active{background-color: rgb(0, 94, 255);}
-
 .type {
     margin-left: 100px;
 }
