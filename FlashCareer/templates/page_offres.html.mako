@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="Michael Ireneo Guillaume" content="FlashCareer">
-    <link rel="stylesheet" type="text/css" href="/static/postuler.css">
     <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
     <link rel="stylesheet" type="text/css" href="/static/page_offres.css">
     <link rel="icon" href="/static/logo.jpg" type="image/x-icon">
