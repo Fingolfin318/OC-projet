@@ -32,10 +32,6 @@
                     <li class="postuler">
                     <a href="${url_for('offre', id=offre['id'])}">Postuler à l'offre</a>
                     </li>
-                    <li>Détail : ${offre['detail']}</li>
-                </div>
-                <div class="postuler">
-                <a href="${url_for('offre', id=offre['id'])}">Postuler à l'offre</a>
                 </div>
             % endfor
         </div>
