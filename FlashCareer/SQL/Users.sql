@@ -1,4 +1,4 @@
-
+drop table if exists users
 --dd--
 create table users(
     id integer primary key,

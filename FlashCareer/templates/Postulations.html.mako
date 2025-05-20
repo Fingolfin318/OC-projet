@@ -19,12 +19,12 @@
     <h1>Postulations pour vos offres :<h1>
     <div class="offres">
             % for postulation in postulations :
-                Pour l'offre : offre_nom<br><br>
+                Pour l'offre : ${postulation['offre_id']}<br><br>
                 <div class="liste">
-                    <li>Nom du postulant : ${postulation['nom_chercheur']}</li>
-                    <li>Prénom du postulant : ${postulation['prenom_chercheur']}</li>
+                    <li>Nom du postulant : ${postulation['chercheur_nom']}</li>
+                    <li>Prénom du postulant : ${postulation['chercheur_prénom']}</li>
                     <li>CV du postulant : ${postulation['CV']}</li>
-                    <li>Texte de motivation : ${postulation['duration']}</li>
+                    <li>Texte de motivation : ${postulation['texte_motiv']}</li>
                     <li>Email du postulant : ${postulation['chercheur_email']}</li>
                 </div>
             % endfor

@@ -7,7 +7,8 @@ from flask_sqlite import SQLiteExtension, sqlite3, get_db
 from sqlite3 import IntegrityError
 ##
 app = Flask("flashcareer") 
-app.secret_key = os.urandom(16) 
+app.secret_key = '1980'
+#os.urandom(16) 
 MakoTemplates(app)
 SQLiteExtension(app)
 
@@ -175,41 +176,40 @@ def page_offres():
     offres = db.execute('select * from offres').fetchall()
     return render_template('page_offres.html.mako', offres=offres)
 
-@app.route('/postuler', methods=['GET', 'POST'])
-def postuler():
+@app.route('/postuler/<id>', methods=['GET', 'POST'])
+def postuler(id):
+    offre_patr_ent = get_db().execute('select patron_entreprise from offres where id = ?', (int(id),)).fetchone()
     if request.method == "GET":
-        return render_template('postuler_formulaire.html.mako', error=None)
+        return render_template('postuler_formulaire.html.mako', error=None, id=id)
     elif request.method == "POST":
         db = get_db()
         if request.form['prénom'] != session["prenom"] or request.form['nom'] != session["nom"] :
-            return render_template('postuler_formulaire.html.mako', error=str('Nom ou prénom incorect'))
+            return render_template('postuler_formulaire.html.mako', error=str('Nom ou prénom incorect'), id=id)
         else : 
             try:
                 db.execute(
-                    """INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id)
-                    VALUES (?, ?, ?, ?, ?, ?);""",
-                    (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], id))
+                    """INSERT INTO postulations (chercheur_nom, chercheur_prénom, CV, chercheur_email, texte_motiv, offre_id, offre_patr_nom)
+                    VALUES (?, ?, ?, ?, ?, ?, ?);""",
+                    (request.form['nom'], request.form['prénom'], request.form['CV'], request.form['email'], request.form['texte_motiv'], id, offre_patr_ent[0]))
                 db.commit()
                 session['message'] = str('Postulation réussie !')
             except IntegrityError :
-                return render_template('postuler_formulaire.html.mako', e=str('Format incorect'))
+                return render_template('postuler_formulaire.html.mako', error=str('Format incorect'))
             return redirect(url_for('accueil'))
 
 @app.route('/offre/<id>')
 def offre(id):
+    print(id)
     offre = get_db().execute('select * from offres where id = ?', id).fetchone()
-    return render_template('offre.html.mako', offre=offre,)
+    return render_template('offre.html.mako', offre=offre)
 
 @app.route('/postulations')
 def postulations():
-    nom = session['nom']
+    nom = session['entreprise']
+    print(nom)
     postulations = get_db().execute('select * from postulations where offre_patr_nom = ?', (nom,)).fetchall()
+    print(postulations)
     return render_template('postulations.html.mako', postulations=postulations)
+
 #RIEN APRÈS CA !!!#
 app.run(debug=True)
-#postulaions = get_db().execute('select * from postulations').fetchall()
-    #for i in postulations :
-    #    i = session['nom']
-      #  postulation = get_db().execute('select * from postulations where offre_patr_nom = ?', (i)).fetchall()
-       # postulations.append(postulation)
-    #return render_template('postulations.html.mako', postulations=postulations)

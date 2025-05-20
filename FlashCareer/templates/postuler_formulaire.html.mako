@@ -23,7 +23,7 @@
     <br>
     <br>
     <div class="liste">
-        <form action="/postuler/<id>" method="post">
+        <form action="${url_for('postuler', id=id)}" method="post">
             <label for="nom">Nom :</label><br>
             <input type="text" id="nom" name="nom" required><br><br>
 
