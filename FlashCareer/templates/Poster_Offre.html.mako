@@ -8,6 +8,7 @@
         <title>Entreprise</title>
      </head>
      <body>
+        <div class="logo-lien">
         <div class="title_content">
             <header class ="entete">
                 <a href="${ url_for('accueil') }">
@@ -16,10 +17,15 @@
             </header>
             <h1>Voici ton offre de poste : </h1>
         </div>
+        </div>
         <section>  
             <form   action="${url_for('poster_offre')}" 
                     method="post"
                     target="_self">
+                <p>
+                    <label>Nom de l'emploi</label><br>
+                    <input type='text' name='trav_nom' required>
+                </p>
                 <p>
                     <label>Entreprise</label><br>
                     <input type="text" name="patron_entreprise" required>
@@ -29,7 +35,7 @@
                     <input type="email" name="patron_email" required>
                 </p>
                 <p>
-                    <label>Type(s) recherché(s)</label><br>
+                    <label>Profil(s) recherché(s)</label><br>
                     <input type="text" name="type_searched" required>
                 </p>
                 <p>
@@ -53,6 +59,10 @@
                 <p>
                   <label>Formation(s) nécessaire(s)</label><br>
                   <input type="text" name="forma_needed" required>
+                </p>
+                <p>
+                    <label>Détail du travail :</label><br>
+                    <input type='text' name='detail' required>
                 </p>
                 <p>
                   <button type="submit">Poster</button>
