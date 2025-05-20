@@ -3,20 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Zapoï Piotr">
+    <link rel="stylesheet" type="text/css" href="/static/style_gen.css">
+    <link rel="stylesheet" type="text/css" href="/static/page_offres.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
    <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Postuler</title>
+    <title>Postulations</title>
 </head>
 <body>
     <header class ="entete">
-        <a href="${ url_for('accueil') }">
+        <a class="logo-lien" href="${ url_for('accueil') }">
             <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
         </a>
+        <h1>Postulations pour vos offres :<h1>
     </header>
-    <h1>Postulations pour vos offres :<h1>
     <div class="offres">
             % for postulation in postulations :
                 Pour l'offre : ${postulation['offre_id']}<br><br>
