@@ -72,8 +72,24 @@ li {
 .liste {
     text-align: left;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.postuler {
-    align-content: right;
+.liste li {
+    list-style: none;
+}
+
+.liste .postuler {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.liste .postuler a {
+    display: inline-block;
+    padding: 8px 16px;
 }
