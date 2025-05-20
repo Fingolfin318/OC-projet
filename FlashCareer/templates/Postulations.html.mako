@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Zapoï Piotr">
+    <link rel="stylesheet" type="text/css" href="/static/ire.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
    <!DOCTYPE html>
 <html lang="fr">
@@ -15,8 +16,8 @@
         <a href="${ url_for('accueil') }">
             <img src="${ url_for('static', filename='logo.png') }" alt="Accueil" style="height: 150px;">
         </a>
+        <h1>Postulations pour vos offres :<h1>
     </header>
-    <h1>Postulations pour vos offres :<h1>
     <div class="offres">
             % for postulation in postulations :
                 Pour l'offre : offre_nom<br><br>
