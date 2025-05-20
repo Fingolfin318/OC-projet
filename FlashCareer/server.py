@@ -202,8 +202,14 @@ def offre(id):
 
 @app.route('/postulations')
 def postulations():
-    user_nom = session["nom"]
-    postulations = get_db().execute('select * from postulations where offre_patr_nom = ?', (user_nom)).fetchall()
+    nom = session['nom']
+    postulations = get_db().execute('select * from postulations where offre_patr_nom = ?', (nom,)).fetchall()
     return render_template('postulations.html.mako', postulations=postulations)
 #RIEN APRÈS CA !!!#
 app.run(debug=True)
+#postulaions = get_db().execute('select * from postulations').fetchall()
+    #for i in postulations :
+    #    i = session['nom']
+      #  postulation = get_db().execute('select * from postulations where offre_patr_nom = ?', (i)).fetchall()
+       # postulations.append(postulation)
+    #return render_template('postulations.html.mako', postulations=postulations)
