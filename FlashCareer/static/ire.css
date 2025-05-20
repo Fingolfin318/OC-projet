@@ -1,7 +1,7 @@
 
 :root {
     --background-color: lightskyblue;
-    --text-color: blue;
+    --text-color: rgb(0, 0, 0);
     --primary-color: rgb(49, 136, 187);
     --secondary-color: #649dd5;
     --accent-color: black;
