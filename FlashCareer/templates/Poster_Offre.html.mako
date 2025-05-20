@@ -8,6 +8,7 @@
         <title>Entreprise</title>
      </head>
      <body>
+        <div class="logo-lien">
         <div class="title_content">
             <header class ="entete">
                 <a href="${ url_for('accueil') }">
@@ -15,6 +16,7 @@
                 </a>
             </header>
             <h1>Voici ton offre de poste : </h1>
+        </div>
         </div>
         <section>  
             <form   action="${url_for('poster_offre')}" 
